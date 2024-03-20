@@ -22,6 +22,7 @@
             background-color: #f4f4f4;
             padding: 10px;
             text-align: center;
+            margin-bottom: 20px;
         }
         nav ul {
             list-style-type: none;
@@ -41,65 +42,60 @@
             padding: 20px 0;
         }
         .listas, .material {
-            float: left;
-            width: 48%;
-            margin-right: 2%;
+            margin-bottom: 40px;
+            clear: both;
         }
         .listas h2, .material h2 {
             border-bottom: 2px solid #333;
             padding-bottom: 5px;
         }
-        .subcat-icons {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 10px;
+        .subcat-names {
+            background-color: #f4f4f4;
+            padding: 10px 0;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .subcat-names h3, .subcat-icons a {
+            font-size: 20px;
+            color: #333;
+            text-decoration: none;
+            display: block;
+            padding: 10px 0;
+            margin: 0;
         }
         .subcat-icons a {
-            text-decoration: none;
-            color: #333;
-            text-align: center;
-            display: inline-block;
-            width: 30%;
-        }
-        .subcat-icons img {
-            width: 60px;
-            height: 60px;
-            margin-bottom: 10px;
+            background-color: #f4f4f4;
+            border-top: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Your Website</h1>
+        <h1>AlanLG</h1>
     </header>
     <nav>
-        <ul>
-            <li><a href="#listas">Listas</a></li>
-            <li><a href="#material">Material</a></li>
-        </ul>
+        
+
+
     </nav>
     <div class="container">
         <section id="listas" class="listas">
-            <h2>Listas</h2>
+<h2>Listas</h2>
             <div class="subcat-icons">
-                <a href="elemental.html">
-                    <img src="elemental_icon.png" alt="Elemental">
-                    <div>Elemental</div>
-                </a>
-                <a href="intermedio.html">
-                    <img src="intermedio_icon.png" alt="Intermedio">
-                    <div>Intermedio</div>
-                </a>
-                <a href="avanzado.html">
-                    <img src="avanzado_icon.png" alt="Avanzado">
-                    <div>Avanzado</div>
-                </a>
+                <a href="elemental.html">Elemental</a>
+                <a href="intermedio.html">Intermedio</a>
+                <a href="avanzado.html">Avanzado</a>
             </div>
         </section>
+        <hr>
         <section id="material" class="material">
-            <h2>Material</h2>
+<h2>Material</h2>
             <!-- You can upload your PDFs or other materials here -->
-            <p>PDFs of math materials created by yourself can be placed here.</p>
+            <div class="subcat-icons">
+                <a href="material.html">Material</a>
+    
+            </div>
         </section>
     </div>
 </body>
