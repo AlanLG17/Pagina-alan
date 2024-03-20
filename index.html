@@ -1,35 +1,107 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Math Resources</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website Title</title>
+    <style>
+        /* CSS styles can be added here or linked externally */
+        /* This is just a basic example, you can customize it further */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            background-color: #f4f4f4;
+            padding: 10px;
+            text-align: center;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            color: #333;
+            text-decoration: none;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px 0;
+        }
+        .listas, .material {
+            float: left;
+            width: 48%;
+            margin-right: 2%;
+        }
+        .listas h2, .material h2 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+        }
+        .subcat-icons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+        .subcat-icons a {
+            text-decoration: none;
+            color: #333;
+            text-align: center;
+            display: inline-block;
+            width: 30%;
+        }
+        .subcat-icons img {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Math Resources</h1>
-    <h2>Listas</h2>
-    <h3>Elemental</h3>
-    <ul>
-        <li><a href="elemental1.pdf">Elemental 1</a></li>
-        <li><a href="elemental2.pdf">Elemental 2</a></li>
-        <!-- Add more links as needed -->
-    </ul>
-    <h3>Intermedio</h3>
-    <ul>
-        <li><a href="intermedio1.pdf">Intermedio 1</a></li>
-        <li><a href="intermedio2.pdf">Intermedio 2</a></li>
-        <!-- Add more links as needed -->
-    </ul>
-    <h3>Avanzado</h3>
-    <ul>
-        <li><a href="avanzado1.pdf">Avanzado 1</a></li>
-        <li><a href="avanzado2.pdf">Avanzado 2</a></li>
-        <!-- Add more links as needed -->
-    </ul>
-    <h2>Material</h2>
-    <ul>
-        <li><a href="material1.pdf">Material 1</a></li>
-        <li><a href="material2.pdf">Material 2</a></li>
-        <!-- Add more links as needed -->
-    </ul>
+    <header>
+        <h1>Your Website</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#listas">Listas</a></li>
+            <li><a href="#material">Material</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <section id="listas" class="listas">
+            <h2>Listas</h2>
+            <div class="subcat-icons">
+                <a href="elemental.html">
+                    <img src="elemental_icon.png" alt="Elemental">
+                    <div>Elemental</div>
+                </a>
+                <a href="intermedio.html">
+                    <img src="intermedio_icon.png" alt="Intermedio">
+                    <div>Intermedio</div>
+                </a>
+                <a href="avanzado.html">
+                    <img src="avanzado_icon.png" alt="Avanzado">
+                    <div>Avanzado</div>
+                </a>
+            </div>
+        </section>
+        <section id="material" class="material">
+            <h2>Material</h2>
+            <!-- You can upload your PDFs or other materials here -->
+            <p>PDFs of math materials created by yourself can be placed here.</p>
+        </section>
+    </div>
 </body>
 </html>
+
