@@ -58,7 +58,7 @@
         <h1>Material</h1>
     </header>
     <div class="container">
-        <div class="category" onclick="toggleSubcategory('combinatoria')">
+        <div class="category" onclick="toggleSubcategory('Listas')">
             <h2>Listas &#9660;</h2>
             <div class="subcategory" id="Listas">
                 <ul>
@@ -69,7 +69,34 @@
                 </ul>
             </div>
         </div>
-    
+        <div class="category" onclick="toggleSubcategory('algebra')">
+            <h2>Álgebra &#9660;</h2>
+            <div class="subcategory" id="algebra">
+                <ul>
+                    <li><a href="algebra_1.pdf">Álgebra 1</a></li>
+                    <li><a href="algebra_2.pdf">Álgebra 2</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="category" onclick="toggleSubcategory('teoria_de_numeros')">
+            <h2>Teoría de Números &#9660;</h2>
+            <div class="subcategory" id="teoria_de_numeros">
+                <ul>
+                    <li><a href="teoria_de_numeros_1.pdf">Teoría de Números 1</a></li>
+                    <li><a href="teoria_de_numeros_2.pdf">Teoría de Números 2</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="category" onclick="toggleSubcategory('geometria')">
+            <h2>Geometría &#9660;</h2>
+            <div class="subcategory" id="geometria">
+                <ul>
+                    <li><a href="geometria_1.pdf">Geometría 1</a></li>
+                    <li><a href="geometria_2.pdf">Geometría 2</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
     <script>
         function toggleSubcategory(subcategoryId) {
             var subcategory = document.getElementById(subcategoryId);
