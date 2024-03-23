@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Material</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px 0;
+        }
+        .category {
+            border: 2px solid #333;
+            background-color: #f4f4f4;
+            margin-bottom: 20px;
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .category h2 {
+            margin: 0;
+        }
+        .subcategory {
+            display: none;
+        }
+        .subcategory ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 10px 0;
+        }
+        .subcategory ul li {
+            margin-bottom: 5px;
+        }
+        .subcategory ul li a {
+            text-decoration: none;
+            color: #333;
+            display: block;
+            padding: 10px;
+            background-color: #ddd;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Material</h1>
+    </header>
+    <div class="container">
+        <div class="category" onclick="toggleSubcategory('Listas')">
+            <h2>Listas &#9660;</h2>
+            <div class="subcategory" id="Listas">
+                <ul>
+                    <li><a href="/texs/Material/lista1/lista1.pdf" target="_blank">Lista 1</a></li>
+                    <li><a href="/texs/Material/lista2/lista2.pdf" target="_blank">Lista 2</a></li>
+                    <li><a href="/texs/Material/lista3/lista3.pdf" target="_blank">Lista 3</a></li>
+                    <li><a href="/texs/Material/lista4/lista4.pdf" target="_blank">Lista 4</a></li>
+                </ul>
+            </div>
+        </div>
+       
+    </div>
+    <script>
+        function toggleSubcategory(subcategoryId) {
+            var subcategory = document.getElementById(subcategoryId);
+            if (subcategory.style.display === "block") {
+                subcategory.style.display = "none";
+            } else {
+                subcategory.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
