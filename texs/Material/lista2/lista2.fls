@@ -1,8 +1,8 @@
-PWD c:/Users/Edgar/Pagina-alan/texs/lista2
+PWD c:/Users/Edgar/Pagina-alan/texs/Material/lista2
 INPUT c:/texlive/2024/texmf.cnf
 INPUT c:/texlive/2024/texmf-dist/web2c/texmf.cnf
 INPUT c:/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT c:/Users/Edgar/Pagina-alan/texs/lista2/lista2.tex
+INPUT c:/Users/Edgar/Pagina-alan/texs/Material/lista2/lista2.tex
 OUTPUT lista2.log
 INPUT c:/texlive/2024/texmf-dist/tex/latex/koma-script/scrartcl.cls
 INPUT c:/texlive/2024/texmf-dist/tex/latex/koma-script/scrartcl.cls

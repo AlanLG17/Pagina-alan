@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1711217674.17671 "c:/Users/Edgar/Pagina-alan/texs/lista2/lista2.tex" "lista2.pdf" "lista2" 1711217677.98548 2
-  "c:/Users/Edgar/Pagina-alan/texs/lista2/lista2.tex" 1711217592 2297 e369172380205688dda09d121c2c96a4 ""
+["pdflatex"] 1711290828.67257 "c:/Users/Edgar/Pagina-alan/texs/Material/lista2/lista2.tex" "lista2.pdf" "lista2" 1711290832.44136 2
+  "c:/Users/Edgar/Pagina-alan/texs/Material/lista2/lista2.tex" 1711217592 2297 e369172380205688dda09d121c2c96a4 ""
   "c:/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1711152245 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1711149575 1004 54797486969f23fa377b128694d548df ""
   "c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1711149575 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -250,9 +250,9 @@
   "c:/texlive/2024/texmf.cnf" 1711160027 713 614551405fc44b98efbf516466e3c909 ""
   "evan.sty" 1710993773 31038 c9aaa5e8d12b2adeeed712e1a704ca4e ""
   "lista2-1.pdf" 1711217649 10434 e493e00daacb0322ebc9345647096104 ""
-  "lista2.aux" 1711217677 881 ad4cfa6cc9678d0e2d0d7aeccb3d10bb "pdflatex"
-  "lista2.out" 1711217677 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "lista2.pre" 1711217677 41 aadfc92db9d246f05f82bb3355ee7f37 "pdflatex"
+  "lista2.aux" 1711290832 881 ad4cfa6cc9678d0e2d0d7aeccb3d10bb "pdflatex"
+  "lista2.out" 1711290831 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "lista2.pre" 1711290831 41 aadfc92db9d246f05f82bb3355ee7f37 "pdflatex"
   "lista2.tex" 1711217592 2297 e369172380205688dda09d121c2c96a4 ""
   (generated)
   "lista2-1.asy"

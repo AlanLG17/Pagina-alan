@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.3.22)  23 MAR 2024 12:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.3.22)  24 MAR 2024 08:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Users/Edgar/Pagina-alan/texs/lista3/lista3.tex
-(c:/Users/Edgar/Pagina-alan/texs/lista3/lista3.tex
+**c:/Users/Edgar/Pagina-alan/texs/Material/lista3/lista3.tex
+(c:/Users/Edgar/Pagina-alan/texs/Material/lista3/lista3.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-03-14>
 (c:/texlive/2024/texmf-dist/tex/latex/koma-script/scrartcl.cls
@@ -1134,15 +1134,22 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 Package hyperref Info: bookmark level for unknown problem defaults to 0 on input line 18.
 \openout3 = `lista3-1.asy'.
 
-<lista3-1.pdf, id=32, 85.3579pt x 85.3579pt>
+<lista3-1.pdf, id=32, 131.55147pt x 114.48772pt>
 File: lista3-1.pdf Graphic file (type pdf)
 <use lista3-1.pdf>
-Package pdftex.def Info: lista3-1.pdf  used on input line 35.
-(pdftex.def)             Requested size: 85.35768pt x 85.35768pt.
+Package pdftex.def Info: lista3-1.pdf  used on input line 56.
+(pdftex.def)             Requested size: 131.55113pt x 114.48743pt.
+\openout3 = `lista3-2.asy'.
+
+<lista3-2.pdf, id=33, 171.72156pt x 98.55821pt>
+File: lista3-2.pdf Graphic file (type pdf)
+<use lista3-2.pdf>
+Package pdftex.def Info: lista3-2.pdf  used on input line 95.
+(pdftex.def)             Requested size: 171.72113pt x 98.55797pt.
  [1
 
 
-{c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./lista3-1.pdf>] (./lista3.aux)
+{c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./lista3-1.pdf> <./lista3-2.pdf>] (./lista3.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2020/03/25>
@@ -1158,18 +1165,18 @@ Package rerunfilecheck Info: Checksums for `lista3.out':
 (rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 39068 strings out of 474104
- 819961 string characters out of 5747502
+ 39082 strings out of 474104
+ 820310 string characters out of 5747502
  1944496 words of memory out of 5000000
- 60738 multiletter control sequences out of 15000+600000
- 573854 words of font info for 117 fonts, out of 8000000 for 9000
+ 60746 multiletter control sequences out of 15000+600000
+ 573565 words of font info for 119 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 123i,19n,128p,10963b,461s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb>
-Output written on lista3.pdf (1 page, 122126 bytes).
+ 123i,19n,128p,10972b,461s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb>
+Output written on lista3.pdf (1 page, 95797 bytes).
 PDF statistics:
- 112 PDF objects out of 1000 (max. 8388607)
- 69 compressed objects within 1 object stream
+ 98 PDF objects out of 1000 (max. 8388607)
+ 60 compressed objects within 1 object stream
  10 named destinations out of 1000 (max. 500000)
- 28786 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 26743 words of extra memory for PDF output out of 29859 (max. 10000000)
 

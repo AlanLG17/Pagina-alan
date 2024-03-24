@@ -1,6 +1,6 @@
 if(!settings.multipleView) settings.batchView=false;
 settings.tex="pdflatex";
-defaultfilename="lista3-1";
+defaultfilename="lista3-2";
 if(settings.render < 0) settings.render=4;
 settings.outformat="";
 settings.inlineimage=true;
@@ -52,33 +52,33 @@ return g;
 }
 
 /* Geogebra to Asymptote conversion, documentation at artofproblemsolving.com/Wiki go to User:Azjps/geogebra */
-import graph; size(4.5cm);
+import graph; size(6cm);
 real labelscalefactor = 0.5; /* changes label-to-point distance */
 pen dps = linewidth(0.7) + fontsize(10); defaultpen(dps); /* default pen style */
 pen dotstyle = black; /* point style */
-real xmin = -4.84, xmax = 14.72, ymin = -3.32, ymax = 8.56; /* image dimensions */
+real xmin = -4.971088291553408, xmax = 14.090705728380154, ymin = -4.674638075103188, ymax = 6.902770562770564; /* image dimensions */
 
-
-draw((0,0)--(4,0)--(6,3.464101615137755)--(4,6.9282032302755105)--(0,6.928203230275511)--(-2,3.464101615137758)--cycle, linewidth(0.7));
 /* draw figures */
-draw((0,0)--(4,0), linewidth(1));
-draw((4,0)--(6,3.464101615137755), linewidth(1));
-draw((6,3.464101615137755)--(4,6.9282032302755105), linewidth(1));
-draw((4,6.9282032302755105)--(0,6.928203230275511), linewidth(1));
-draw((0,6.928203230275511)--(-2,3.464101615137758), linewidth(1));
-draw((-2,3.464101615137758)--(0,0), linewidth(1));
-draw((-2,3.464101615137758)--(6,3.464101615137755), linewidth(1));
-draw((4,0)--(4,6.9282032302755105), linewidth(1));
-/* dots and labels */
-dot((0,0),dotstyle);
-dot((4,0),dotstyle);
-dot((6,3.464101615137755),dotstyle);
-dot((4,6.9282032302755105),dotstyle);
-dot((0,6.928203230275511),dotstyle);
-dot((-2,3.464101615137758),dotstyle);
-dot((4,3.464101615137756),linewidth(4pt) + dotstyle);
-clip((xmin,ymin)--(xmin,ymax)--(xmax,ymax)--(xmax,ymin)--cycle);
-filldraw((0,0)--(4,0)--(4,3.464101615137756)--(-2,3.464101615137758)--cycle,lightred,red);
-filldraw((4,3.464101615137756)--(4,6.9282032302755105)--(6,3.464101615137755)--cycle,lightcyan,blue);
+draw((0,0)--(0,3), linewidth(1));
+draw((0,3)--(1,3), linewidth(1));
+draw((1,3)--(1,4), linewidth(1));
+draw((1,4)--(4,4), linewidth(1));
+draw((4,4)--(4,1), linewidth(1));
+draw((4,1)--(3,1), linewidth(1));
+draw((3,1)--(3,0), linewidth(1));
+draw((0,0)--(3,0), linewidth(1));
+draw((1,0)--(1,3), linewidth(1));
+draw((2,4)--(2,0), linewidth(1));
+draw((3,0)--(3,4), linewidth(1));
+draw((1,3)--(4,3), linewidth(1));
+draw((0,2)--(4,2), linewidth(1));
+draw((0,1)--(3,1), linewidth(1));
+draw((6,3)--(6,1), linewidth(1));
+draw((6,1)--(7,1), linewidth(1));
+draw((7,1)--(7,3), linewidth(1));
+draw((7,3)--(6,3), linewidth(1));
+draw((6,2)--(7,2), linewidth(1));
 
+/* dots and labels */
+clip((xmin,ymin)--(xmin,ymax)--(xmax,ymax)--(xmax,ymin)--cycle);
 /* end of picture */
