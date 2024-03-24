@@ -12,7 +12,6 @@
             background-color: #f3f3f3;
             color: #333;
         }
-        
     
         header {
             background-color: #333333dc;
@@ -35,12 +34,13 @@
             border: 2px solid #000000;
             border-radius: 10px;
             margin: 10px;
-            width: calc(33.33% - 20px);
+            width: calc(25% - 20px); /* Ancho para cuatro recuadros en una fila */
             padding: 20px;
             box-sizing: border-box;
             text-align: center;
             transition: all 0.3s ease;
             font-family: 'Garamond', serif;
+            height: calc((100vw / 4 - 40px) * 1.13); /* Altura según la proporción áurea */
         }
         .category:hover {
             transform: translateY(-5px);
@@ -112,35 +112,41 @@
     <div class="container">
         <div class="category">
             <h2>Elemental</h2>
-            <img src="ruta_a_la_imagen_elemental.jpg" alt="Material Elemental">
+            <img style="width: 76%;" src="ruta_a_la_imagen_elemental.jpg" alt="Material Elemental">
             <p>Contenido para nivel elemental, incluyendo ejercicios y teoría básica.</p>
-            <a href="elemental.html">Ir a Elemental</a>
+            <a href="/eiam/elemental.html">Ir a Elemental</a>
         </div>
 
         <div class="category">
             <h2>Intermedio</h2>
-            <img src="ruta_a_la_imagen_intermedio.jpg" alt="Material Intermedio">
+            <img style="width: 100;" src="ruta_a_la_imagen_intermedio.jpg" alt="Material Intermedio">
             <p>Material para niveles intermedios, con ejercicios desafiantes y conceptos avanzados.</p>
-            <a href="intermedio.html">Ir a Intermedio</a>
+            <a href="/eiam/intermedio.html">Ir a Intermedio</a>
         </div>
 
         <div class="category">
             <h2>Avanzado</h2>
-            <img src="ruta_a_la_imagen_avanzado.jpg" alt="Material Avanzado">
+            <img style="width: 73%;" class="imagen-especifica" src="ruta_a_la_imagen_avanzado.jpg" alt="Material Avanzado">
             <p>Material para niveles avanzados, con problemas complejos y teoría avanzada.</p>
-            <a href="avanzado.html">Ir a Avanzado</a>
+            <a href="/eiam/avanzado.html">Ir a Avanzado</a>
         </div>
+
+        
+
+
 
         <div class="category">
             <h2>Listas cortas</h2>
-            <img src="ruta_a_la_imagen_general.jpg" alt="Material General">
+            <img  src="ruta_a_la_imagen_general.jpg" alt="Material General">
             <p>Material que abarca diferentes niveles y temas, para todo tipo de estudiantes.</p>
-            <a href="material.html">Ir a Listas</a>
+            <a href="/eiam/material.html">Ir a Listas</a>
         </div>
     </div>
 
 </body>
 </html>
+
+ 
 
 
 
