@@ -91,6 +91,7 @@
             <h2>Combinatoria <span>&#9660;</span></h2>
             <div class="subcategory" id="Combinatoria">
                 <ul>
+<<<<<<< HEAD
                     <li>
                         <a href="/texs/Intermedio/Combinatoria/coloraciones/coloraciones.pdf">Coloraciones</a>
                         <div class="list-icons">
@@ -105,6 +106,10 @@
                             <span class="list-icon" onclick="openText('/texs/Intermedio/Combinatoria/principio de casillas/casillas.tex')"title="LaTeX">📃</span>
                         </div>
                     </li>
+=======
+                    <li><a href="coloraciones.pdf">Coloraciones</a></li>
+                    <li><a href="casillas.pdf">Principio de Casillas</a></li>
+>>>>>>> 879d771d0b9e475372dafedda2ebded5185ed9b9
                 </ul>
             </div>
         </div>
@@ -199,6 +204,7 @@
                         </div>
                     
             </div>
+<<<<<<< HEAD
             <script>
                 function toggleSubcategory(subcategoryId) {
                     var subcategory = document.getElementById(subcategoryId);
@@ -215,3 +221,46 @@
             </script>
             </body>
             </html>
+=======
+        </div>
+        <div class="category" onclick="toggleSubcategory('teoria_de_numeros')">
+            <h2>Teoría de Números &#9660;</h2>
+            <div class="subcategory" id="teoria_de_numeros">
+                <ul>
+                    <li><a href="congruencias.pdf">Congruencias</a></li>
+
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="category" onclick="toggleSubcategory('geometria')">
+            <h2>Geometría &#9660;</h2>
+            <div class="subcategory" id="geometria">
+                <ul>
+
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="category" onclick="toggleSubcategory('miscelaneo')">
+            <h2>Misceláneo &#9660;</h2>
+            <div class="subcategory" id="miscelaneo">
+                <ul>
+                    <li><a href="tecnicas.pdf">Misceláneo</a></li>
+                </ul>
+            </div>
+        </div>
+    </div> <!-- Cierre del div.container -->
+    <script>
+        function toggleSubcategory(subcategoryId) {
+            var subcategory = document.getElementById(subcategoryId);
+            if (subcategory.style.display === "block") {
+                subcategory.style.display = "none";
+            } else {
+                subcategory.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
+>>>>>>> 879d771d0b9e475372dafedda2ebded5185ed9b9
