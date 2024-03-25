@@ -1,0 +1,68 @@
+\documentclass[11pt]{scrartcl}
+\usepackage[sexy]{evan}
+\usepackage{amsthm}
+\usepackage[helvetica]{quotchap} 
+
+\title{asdfghjklñ}
+\author{AlanLG}
+\date{24 de Marzo del 2024}
+
+\begin{document}
+
+\maketitle
+
+\epigraph{Un matemático, como un pintor o un poeta, es un creador de
+patrones. Si sus patrones son más permanentes que los de otros
+artistas, es porque están hechos de ideas.}
+{\emph{G.H. Hardy}}
+
+    
+\begin{problem}
+
+
+    ¿Cuánto vale el área sombreada?
+\begin{center}
+    \begin{asy}
+        size(4cm);
+        draw((0,0)--(3,0)--(2,3)--cycle);
+        filldraw((0.97,1.46)--(1.89,0.8)--(2.63,1.11)--(2,3)--cycle,lightred);
+        draw((0,0)--(2.63,1.11));
+        draw((3,0)--(0.97,1.46));
+        label("2", (2.51,0.64));
+        label("3", (0.96,0.75));
+        label("4",(1.63,0.27));
+        label("?",(1.86,1.7));
+
+    \end{asy}
+\end{center}
+\end{problem}
+\vspace{0.1cm}
+
+\begin{problem}
+    Prueba que si $ab=cd$ entonces $a+b+c+d$ no es primo
+\end{problem}
+\vspace{0.1cm}
+
+    \begin{problem}[\href{https://artofproblemsolving.com/community/c6h2339189p18843038}{OMM 2020}]
+
+        Sea $n\ge 3$ un número entero. En un juego hay $n$ cajas en una matriz circular. Al principio, cada caja contiene un objeto que puede ser piedra, papel o tijera, de tal forma que no existen dos cajas adyacentes con el mismo objeto, y cada objeto aparece al menos en una caja.
+
+\item Al igual que en el juego, la piedra vence a las tijeras, las tijeras vencen al papel y el papel vence a la piedra.
+
+\item El juego consiste en mover objetos de una casilla a otra según la siguiente regla:
+\begin{center}
+\textit{Se eligen dos casillas adyacentes y un objeto de cada una de forma que sean diferentes, y trasladamos el objeto perdedor a la casilla que contiene el objeto ganador. Por ejemplo, si recogimos piedra del cuadro A y tijeras del cuadro B, movemos las tijeras al cuadro A.}
+\end{center}
+Demuestra que, aplicando la regla suficientes veces, es posible mover todos los objetos a la misma caja.
+\end{problem}
+\vspace{0.1cm}
+\begin{problem}
+ 
+
+Sea $n$ un entero positivo. Resuelve el siguiente sistema de ecuaciones
+\[x_1+x_2^2+x_3^3+\cdots +x_n^n=n\]
+\[x_1+2x_2+3x_3+\cdots+nx_n=\frac{n(n+1)}{2}
+
+\end{problem}
+
+\end{document}
