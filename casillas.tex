@@ -47,6 +47,13 @@ Presentaremos ahora, la forma general del principio de casillas
     
 Trata de demostrar esto, la demostración no es muy diferente a la versión que ya vimos, pero quiero que estes convencido de que es cierto.
 
+\begin{theorem}
+    [Otra forma de casillas]
+    Si $a_1,a_2,\ldots a_n$ son números positivos y $a$ es el promedio de estos entonces existe un $a_j$ y un $a_i$ tal que
+    \[a_j\leq a\]
+    \[a_i\geq a\]
+\end{theorem}
+Esto es bastante intuitivo (demuestrálo) y puede llegar a ser útil. Veamos algunos ejemplos donde se use el principio de casillas
 
 \begin{example}
     De cinco puntos dentro o sobre los lados de un triángulo equilátero de lado $2$ hay dos puntos cuya distancia entre ellos en menor o igual a $1$
@@ -70,6 +77,30 @@ Trata de demostrar esto, la demostración no es muy diferente a la versión que 
     Son cuatro regiones como queremos colocar cinco puntos por el principio de casillas deben haber dos puntos en alguna región, o sea, hay dos puntos dentro de un triángulo equilátero de lado $1$, entonces esos dos puntos están a distancia menor o igual a $1$
 \end{proof}
 \end{flushleft}
+\begin{example}
+     Cuál es la máxima cantidad de reyes (de ajedrez) que puedes poner en un tablero de $8\times 8$
+ de modo que no se ataquen entre sí?
+\end{example}
+\begin{walkthrough}
+    \begin{walk}
+        \ii Haz un acomodo en el que se entren $16$ reyes
+        \ii Considera el siguiente acomodo
+        \begin{center}
+            \begin{asy}
+                size(4.5cm);
+                for (int i = 0; i <= 8; ++i) {
+    draw((i,0)--(i,8));
+    draw((0,i)--(8,i));
+    }
+    for (int i = 0; i <= 4; ++i) {
+    draw((2i,0)--(2i,8),linewidth(2));
+    draw((0,2i)--(8,2i),linewidth(2));
+    }
+            \end{asy}
+        \end{center}
+        \ii Muestra por qué no se pueden poner $17$ reyes
+    \end{walk}
+\end{walkthrough}
 \begin{example}
     Si se eligen cinco números de los enteros del 1 al 8, demuestra que dos de ellos deben sumar $9$
 
@@ -149,10 +180,24 @@ Tiene sentido pensar en dividir de alguna forma el tablero de $8\times 8$ en con
     \end{center}
     Nota que si dos si hay dos torres en casillas con el mismo número entonces estas nunca se atacan, como queremos poner $17$ torres (objetos) y hay $8$ números (casillas) entonces hay $3$ torres que están en casillas con el mismo número.
 \end{proof}
-
+\begin{example}
+    Prueba que existe algún número con solo cifras $1$ y $3$, y al menos una de cada una, tal que sea múltiplo de $2023$
+\end{example}
+\begin{walkthrough} Si hay, vamos a construir una forma de hayarlos
+    \begin{walk}
+        \ii Asume, por contradicción, que no hay y considera los siguientes $2023$ números
+        \[13,\hspace{0.2cm} 1313,\hspace{0.2cm} 131313,\hspace{0.2cm} \ldots ,\hspace{0.2cm} \underbrace{1313\cdots 13}_{2023}\]
+        \ii Hay dos con el mismo residuo al dividirse entre $2023$ (¿Por qué?)
+        \ii ¿Qué te queda al restar esos dos números?
+        \ii Concluye
+    \end{walk}
+\end{walkthrough}
 \section{Ejercicios}
 \begin{exercise}
-    En un grupo de $13$ personas hay dos que nacieron el mismo mes
+    Prueba que en un grupo de $13$ personas hay dos que nacieron el mismo mes
+\end{exercise}
+\begin{exercise}
+    Si tengo $17$ peras, $13$ manzanas y $11$ naranjas dentro de un saco, ¿Cuál es el mínimo número de frutas que debo de sacar para garantizar que tengo una fruta de cada una?
 \end{exercise}
 \begin{exercise}
     Dados $12$ enteros, prueba que se pueden escoger $2$ de tal forma que su diferencia sea divisible entre $11$
@@ -161,7 +206,11 @@ Tiene sentido pensar en dividir de alguna forma el tablero de $8\times 8$ en con
     Prueba que una línea recta que no pasa por uno de los vértices de un triángulo, no puede cortar los tres lados del triángulo.
 \end{exercise}
 \begin{exercise}
-    
+    Se tienen pelotas varias pelotas azules, rojas y verdes en un saco, ¿Cuál es el mínimo número de pelotas que debes sacar para garantizar que hay $10$ del mismo color?
+\end{exercise}
+\begin{exercise}
+    Se colocan $5$ puntos dentor de un cuadrado de lado $2$. Demuestra que existen dos puntos que están a una distancia
+    de a lo más $\sqrt{2}$
 \end{exercise}
 \section{Problemas}
 
@@ -178,16 +227,38 @@ Se eligen $n+1$ números dentro del conjunto $\{1,2,3\ldots, 2n\}$, demuestra qu
 \end{problem}
 \vspace{0.1cm}
 \begin{problem}
-   Con los vertices de una cuadricula de $6\times 9$, se forman $24$ triangulos. Muestre que hay dos tráingulos que tienen un vértice en común.
+   Con los vértices de una cuadricula de $6\times 9$, se forman $24$ triangulos. Muestre que hay dos triángulos que tienen un vértice en común.
    \begin{hint}
        Cuántos vértices ocupan los $24$ triángulos
    \end{hint}
 \end{problem}
 \vspace{0.1cm}
 \begin{problem}
+     $51$ hombres y $49$ mujeres se acomodan en una mesa redonda. Prueba que existen dos hombres que están sentados diametralmente opuestos.
+\begin{hint}
+    Hay 50 parejas de personas que están sentadas diametralmente opuestas
+\end{hint}
+\end{problem}
+\vspace{0.1cm}
+\begin{problem}
     Demuestra que de $12$ numeros distintos de dos digitos, siempre hay dos cuya diferencia es un número de dos dígitos
     \begin{hint}
         La condición es equivalente a que su diferencia sea múltiplo de $11$(¿Por qué?)
+    \end{hint}
+\end{problem}
+\vspace{0.1cm}
+\begin{problem}
+    Probar que si cada punto del plano se colorea de rojo o azul entonces existe un segmento de
+longitud 1 cuyos extremos son del mismo color.
+\begin{hint}
+    Considerate los vértices de un triángulo equilátero de lado $1$
+\end{hint}
+\end{problem}
+\vspace{0.1cm}
+\begin{problem}
+    Diez niños juntaron $40$ naranjas, demuestra que hay dos niños que juntaron la misma cantidad de narajanjas
+    \begin{hint}
+       \[0+1+2+3+4+5+6+7+8+9=45\]
     \end{hint}
 \end{problem}
 \vspace{0.1cm}
@@ -231,71 +302,127 @@ divisible entre $12$.
 \end{problem}
 \vspace{0.1cm}
 \begin{problem}
-    Demuestra los criterios de divisibilidad de $1$ al $11$ sin inculuir el del $7$
+    Si $a_1, a_2, a_3,\ldots a_n$ es una permutación de los números $1,2,3,\ldots n$, demuestra que si $n$ es impar, entonces el siguiente producto es par
+ \[(a_1 -1)(a_2 -2)(a_3 -3)\cdots (a_n-n)\]
     \begin{hint}
-         un número $n=\overline{a_ka_{k-1}a_{k-2}\cdots a_2a_1a_0}$ se puede escribir como $n=10^{k}a_k+10^{k-1}a_{k-1}+\cdots 10a_1+10^{0}a_0$
+        La diferencia de dos números es par si tienen la misma paridad
     \end{hint}
 \end{problem}
 \vspace{0.1cm}
 \begin{problem}
-[\href{https://artofproblemsolving.com/community/c5h404350p2254778}{USAJMO 2011/1}]
-Encuentre, con prueba, todos los números enteros positivos $n$ para los cuales $2^n + 12^n + 2011^n$ es un cuadrado perfecto.
-  \begin{hint}
-  analiza $\pmod 3$ y luego $\pmod 4$
-  \end{hint}
-\end{problem}
-\vspace{0.1cm}
-\begin{problem}[Freshman's dream]
-    Demuestra que para todos $a,b\in \mathbb{Z}$, y $p$ un primo se cumple que 
-    \[(a+b)^p\equiv a^p+b^p\]
+    Se tienen $5$ puntos con coordenadas enteras en el plano, demuestra que existen dos de ellos de tal forma que su punto medio también tiene coordenadas enteras
     \begin{hint}
-        Binomio de Newton
+        Dos puntos $(x_1,y_1), (x_2,y_2)$ tienen coordenadas enteras si $x_1,x_2$ y $y_1,y_2$ tienen la misma paridad (¿Por qué?) 
     \end{hint}
 \end{problem}
 \vspace{0.1cm}
 \begin{problem}
-[\href{https://artofproblemsolving.com/community/c6h238569p1313424}{IMO 1964/1}]\phantom \\
-    \begin{walk}
-        \ii Encuentre todos los números enteros positivos $ n$ para los cuales $ 2^n-1$ es divisible por $ 7$.
-        \ii Demuestre que no existe un entero positivo $ n$ para el cual $ 2^n+1$ sea divisible por $ 7$.
-    \end{walk}
- 
+    Demuestra que si se colorean los lados y diagonales de un hexágono regular de colores azul y rojo entonces hay un triángulo cuyos vértices son vértices del hexágono y sus lados son de un mismo color.
+    \begin{hint}
+        Demuestra que de un vértices salen tres lados que son del mismo color.
+        \begin{center}
+            \begin{asy}
+               /* Geogebra to Asymptote conversion, documentation at artofproblemsolving.com/Wiki go to User:Azjps/geogebra */
+import graph; size(5cm); 
+real labelscalefactor = 0.5; /* changes label-to-point distance */
+pen dps = linewidth(0.7) + fontsize(10); defaultpen(dps); /* default pen style */ 
+pen dotstyle = black; /* point style */ 
+real xmin = -3.425597295141094, xmax = 5.344895552817108, ymin = -2.7154597405403655, ymax = 6.174766798174948;  /* image dimensions */
+
+ /* draw figures */
+draw((-1.5,2.5980762113533187)--(3,5.196152422706633), linewidth(2) + red); 
+draw((-1.5,2.5980762113533187)--(4.5,2.598076211353316), linewidth(2) + red); 
+draw((-1.5,2.5980762113533187)--(0,0), linewidth(2) + red); 
+draw((0,0)--(4.5,2.598076211353316), linewidth(1.2) + dotted); 
+draw((4.5,2.598076211353316)--(3,5.196152422706633), linewidth(1.2) + dotted); 
+draw((3,5.196152422706633)--(0,0), linewidth(1.2) + dotted); 
+draw((-1.5,2.5980762113533187)--(0,5.196152422706633), linewidth(0.1)); 
+draw((0,5.196152422706633)--(3,5.196152422706632), linewidth(0.1)); 
+draw((0,0)--(3,0), linewidth(0.1)); 
+draw((3,0)--(4.5,2.598076211353316), linewidth(0.1)); 
+ /* dots and labels */
+dot((-1.5,2.5980762113533187),linewidth(4pt) + dotstyle); 
+clip((xmin,ymin)--(xmin,ymax)--(xmax,ymax)--(xmax,ymin)--cycle); 
+ /* end of picture */
+            \end{asy}
+        \end{center}
+    \end{hint}
+\end{problem}
+\begin{problem}
+   Demuestra que si se escogen $8$ números distintos dentro del conjunto $\{1,2,3,\ldots,15\}$, existen tres parejas de ellos que tiene la misma diferencia positiva
+   \begin{hint}
+       La mayor diferencia es $14$ que solo ocurre una vez (¿Por qué?), ¿Cuantás parejas de números distintos se pueden formar?
+   \end{hint}
+\end{problem}
+\vspace{0.1cm}
+
+\begin{problem}
+[\href{https://artofproblemsolving.com/community/c6h1507145p8926278}{Bundeswettbewerb Mathematik 2017}]
+    En un polígono regular de $35$ lados, se colorean $15$ vértices están de rojo. Demuestra que siempre hay tres vértices rojos que forman un triángulo isósceles?
 \begin{hint}
-    Analiza a $n\pmod 3$ y mira que residuos que dejan las potencias de $2$ al dividirse por $7$
+    Un polígono de $35$ contiene a $7$ pentágonos regulares que no tienen vértices en común
 \end{hint}
 \end{problem}
 \vspace{0.1cm}
 \begin{problem}
-    [\href{https://artofproblemsolving.com/community/c6h60769p366557}{IMO 1986/1}]
-    Sea $d$ cualquier entero no igual a $2,5$ o $13$. Prueba que podemos escoger dos enteros distintos $a$ y $b$ en el conjunto $\{2,5,13,d\}$ tal que $ab-1$ no es un cuadrado perfecto
+   
+    Dados $7$ puntos dentro del interior de un círculo de radio 1, demuestra que hay dos que están a distancia menor que $1$, ¿se podrá con $6$ puntos?
+\begin{hint}
+    Divide el circulo en $6$ regiones, si hay $7$ puntos entonces usa casillas; para el caso de $6$ puntos, divide al circulo en $6$ regiones pero haz tu división de modo que un diametro pasé por algún punto de los $6$
+\end{hint}
+\end{problem}
+\begin{problem}
+Prueba que el cualquier conjunto de 10 enteros positivos menores a 100, hay dos subconjuntos
+sin elementos en común de números que tienen la misma suma
+\begin{hint}
+    El número de subcojuntos posibles es $2^10-1$ y la mayor suma de posible es $99+98+\cdots+91=945$
+\end{hint}
+\end{problem}
+\vspace{0.1cm}
+
+\begin{problem}
+    Dentro de un cojunto de $n+1$ números distintos escogidos dentro de los números del $1$ al $2n$, existe uno que es múltiplo del otro
     \begin{hint}
-        Asume que $2d-1$, $5d-1$, $13d-1$ son todos cuadrados, analízalos módulo $4$ y luegó mod $5$
+        Todo número $k$ es de la forma $k=2^\alpha\cdots q$ con $q$ impar, por casillas hay dos números $k$ dentro de los escogidos que tienen la misma $q$(¿Por qué?)
     \end{hint}
 \end{problem}
 \vspace{0.1cm}
 \begin{problem}
-    Demuestra que $n\mid 2^{n!}-1$ para todo $n$ impar
+    Cada cuadrito de una cuadrículo de $3\times 7$ es coloreado de color blanco y negro. Muestre que en cualquier coloración siempre hay cuatro cuadritos del mismo color que son las esquinas de un rectángulo dentro de la cuadrícula
     \begin{hint}
-        Demuestra que existe un entero $d$ tal que $2^d\equiv 1\pmod n$ y $d\leq n$
+        La columnas pueden quedar coloreadas de $8$ formas (haz los casos)
+        \begin{center}
+            \begin{asy}
+            size(10cm);
+                for (int i = 0; i <= 8; ++i) {
+    draw((2i+1,0)--(2i+2,0)--(2i+2,3)--(2i+1,3)--cycle, gray);
+
+}
+size(10cm);
+                for (int i = 0; i <= 8; ++i) {
+    draw((2i+1,1)--(2i+2,1), gray);
+draw((2i+1,2)--(2i+2,2), gray);
+}
+
+            \end{asy}
+        \end{center}
+ De esas $8$, nota que si dos se repiten entonces acabas, trata de llegar a ese caso de alguna forma   
     \end{hint}
 \end{problem}
-\vspace{0.1cm}
-\begin{problem}
-[\href{https://artofproblemsolving.com/community/c6h17324p29761813}{1 IMO SL/2002}]
-    ¿Cuál es el entero positivo más pequeño $t$ tal que existan enteros $x_1,x_2,\ldots,x_t$ con \[x^3_1+x^3_2+\,\ldots\,+x^3_t=2002^{2002} \,?\]
-    \begin{hint}
-        La respuesta es $t=4$ usa $\pmod 9$ para demostrar que $t\leq 4$ no es alcanzable
-    \end{hint}
-\end{problem}
 
 
-
-
+\clearpage
 
 \bigskip
 
 \section{Hints}
 \Closesolutionfile{all-hints}
+\begin{enumerate}
+  \input{all-hints.out}
+\end{enumerate}
+
+
+\end{document}
 \begin{enumerate}
   \input{all-hints.out}
 \end{enumerate}
