@@ -1,0 +1,847 @@
+ /* Geogebra to Asymptote conversion, documentation at artofproblemsolving.com/Wiki go to User:Azjps/geogebra */
+\documentclass[11pt]{scrartcl}
+\usepackage[sexy]{evan}
+\usepackage{amsthm}
+\renewcommand{\proofname}{Prueba}
+
+
+\usepackage{answers}
+\Newassociation{hint}{hintitem}{all-hints}
+\renewcommand{\solutionextension}{out}
+\renewenvironment{hintitem}[1]{\item[\bfseries #1.]}{}
+
+\Newassociation{answer}{answeritem}{all-answers}
+
+\renewenvironment{answeritem}[1]{\item[\bfseries #1.]}{}
+
+\title{Principio de la suma y producto}
+
+
+\author{AlanLG}
+\date{Febrero 2024}
+
+\begin{document}
+
+\maketitle
+
+\section{Lectura}
+Principio de la suma y del producto, son principios elementales en combinatoria, y a partir de estos se construyen conceptos más avanzados. Comencemos con algunos ejemplos
+\begin{example}
+    En la biblioteca hay 3 libros de álgebra, 2 de combinatoria y 4 de geometría, ¿de cuántas formas puedo escoger un libro dentro de uno de los libros de la biblioteca?
+\end{example}
+\begin{flushleft}
+ Tengo $3+2+4=9$ opciones de elegir un libro
+\end{flushleft}
+\begin{principio}
+    [Principio de la suma]
+    Si una cierta tarea puede realizarse de $m$ maneras y otra tarea puede realizarse de $n$ maneras y ambas tareas son excluyentes, entonces el número de maneras en las que se puede realizar algunas de las tareas es $m+n$.
+\end{principio}
+Trata de comprender el principio anterior. Y veamos ahora un ejemplo del principio del producto.
+
+\begin{example}
+    Quiero formar un atuendo usando uno de mis $2$ pantalones y una de mis $3$ camisas ¿Cuántos atuendos puedo formar?
+\end{example}
+Podemos hacer un diagrama de árbol que ilustre el problema
+
+\begin{center}
+\begin{asy}
+    size(4cm); 
+
+   filldraw((3.4,0.2)--(3.2,0.6)--(3.8,0.8)--(4,0.4)--(4.2,0.8)--(4.8,0.6)--(4.6,0.2)--(4.4,0.4)--(4.4,-0.6)--(3.6,-0.6)--(3.6,0.4)--cycle, lightgreen , green); 
+   filldraw((3.4,-2.8)--(3.2,-2.4)--(3.8,-2.2)--(4,-2.6)--(4.2,-2.2)--(4.8,-2.4)--(4.6,-2.8)--(4.4,-2.6)--(4.4,-3.6)--(3.6,-3.6)--(3.6,-2.6)--cycle, lightblue , blue); 
+   filldraw((8.8,5.4)--(8.6,5.8)--(9.2,6)--(9.4,5.6)--(9.6,6)--(10.2,5.8)--(10,5.4)--(9.8,5.6)--(9.8,4.6)--(9,4.6)--(9,5.6)--cycle, lightred , red); 
+   filldraw((8.8,1.8)--(8.6,2.2)--(9.2,2.4)--(9.4,2)--(9.6,2.4)--(10.2,2.2)--(10,1.8)--(9.8,2)--(9.8,1)--(9,1)--(9,2)--cycle,lightgreen , green); 
+   filldraw((8.8,-1.8)--(8.6,-1.4)--(9.2,-1.2)--(9.4,-1.6)--(9.6,-1.2)--(10.2,-1.4)--(10,-1.8)--(9.8,-1.6)--(9.8,-2.6)--(9,-2.6)--(9,-1.6)--cycle,lightblue , blue); 
+   filldraw((9.8,-2.8)--(9.8,-4.2)--(9.6,-4.2)--(9.6,-3.4)--(9.2,-3.4)--(9.2,-4.2)--(9,-4.2)--(9,-2.8)--cycle,rgb(0.71, 0.40, 0.16) , brown); 
+   filldraw((9.8,0.8)--(9.8,-0.6)--(9.6,-0.6)--(9.6,0.2)--(9.2,0.2)--(9.2,-0.6)--(9,-0.6)--(9,0.8)--cycle,rgb(0.71, 0.40, 0.16) , brown); 
+   filldraw((9.8,4.4)--(9.8,3)--(9.6,3)--(9.6,3.8)--(9.2,3.8)--(9.2,3)--(9,3)--(9,4.4)--cycle,rgb(0.71, 0.40, 0.16) , brown); 
+   filldraw((-0.4,0.6)--(-0.4,-0.8)--(-0.6,-0.8)--(-0.6,0)--(-1,0)--(-1,-0.8)--(-1.2,-0.8)--(-1.2,0.6)--cycle, rgb(0.71, 0.40, 0.16),brown); 
+   filldraw((3.4,3.2)--(3.2,3.6)--(3.8,3.8)--(4,3.4)--(4.2,3.8)--(4.8,3.6)--(4.6,3.2)--(4.4,3.4)--(4.4,2.4)--(3.6,2.4)--(3.6,3.4)--cycle,lightred,red); 
+   
+   draw((0,0)--(3,3), linewidth(0.8)); 
+   draw((0,0)--(3,0), linewidth(0.8)); 
+   draw((0,0)--(3,-3), linewidth(0.8)); 
+   draw((5,3)--(8,4), linewidth(0.8)); 
+   draw((5,0)--(8,0), linewidth(0.8)); 
+   draw((5,-3)--(8,-3), linewidth(1.2));  
+           \end{asy}
+        \end{center}
+
+        \begin{center}
+           \begin{asy}
+            size(4cm); 
+        
+           filldraw((3.4,0.2)--(3.2,0.6)--(3.8,0.8)--(4,0.4)--(4.2,0.8)--(4.8,0.6)--(4.6,0.2)--(4.4,0.4)--(4.4,-0.6)--(3.6,-0.6)--(3.6,0.4)--cycle, lightgreen , green); 
+           filldraw((3.4,-2.8)--(3.2,-2.4)--(3.8,-2.2)--(4,-2.6)--(4.2,-2.2)--(4.8,-2.4)--(4.6,-2.8)--(4.4,-2.6)--(4.4,-3.6)--(3.6,-3.6)--(3.6,-2.6)--cycle, lightblue , blue); 
+           filldraw((8.8,5.4)--(8.6,5.8)--(9.2,6)--(9.4,5.6)--(9.6,6)--(10.2,5.8)--(10,5.4)--(9.8,5.6)--(9.8,4.6)--(9,4.6)--(9,5.6)--cycle, lightred , red); 
+           filldraw((8.8,1.8)--(8.6,2.2)--(9.2,2.4)--(9.4,2)--(9.6,2.4)--(10.2,2.2)--(10,1.8)--(9.8,2)--(9.8,1)--(9,1)--(9,2)--cycle,lightgreen , green); 
+           filldraw((8.8,-1.8)--(8.6,-1.4)--(9.2,-1.2)--(9.4,-1.6)--(9.6,-1.2)--(10.2,-1.4)--(10,-1.8)--(9.8,-1.6)--(9.8,-2.6)--(9,-2.6)--(9,-1.6)--cycle,lightblue , blue); 
+           filldraw((9.8,-2.8)--(9.8,-4.2)--(9.6,-4.2)--(9.6,-3.4)--(9.2,-3.4)--(9.2,-4.2)--(9,-4.2)--(9,-2.8)--cycle,lightgrey , grey); 
+           filldraw((9.8,0.8)--(9.8,-0.6)--(9.6,-0.6)--(9.6,0.2)--(9.2,0.2)--(9.2,-0.6)--(9,-0.6)--(9,0.8)--cycle,lightgrey , grey); 
+           filldraw((9.8,4.4)--(9.8,3)--(9.6,3)--(9.6,3.8)--(9.2,3.8)--(9.2,3)--(9,3)--(9,4.4)--cycle,lightgrey , grey); 
+           filldraw((-0.4,0.6)--(-0.4,-0.8)--(-0.6,-0.8)--(-0.6,0)--(-1,0)--(-1,-0.8)--(-1.2,-0.8)--(-1.2,0.6)--cycle, lightgrey,grey); 
+           filldraw((3.4,3.2)--(3.2,3.6)--(3.8,3.8)--(4,3.4)--(4.2,3.8)--(4.8,3.6)--(4.6,3.2)--(4.4,3.4)--(4.4,2.4)--(3.6,2.4)--(3.6,3.4)--cycle,lightred,red); 
+           
+           draw((0,0)--(3,3), linewidth(0.8)); 
+           draw((0,0)--(3,0), linewidth(0.8)); 
+           draw((0,0)--(3,-3), linewidth(0.8)); 
+           draw((5,3)--(8,4), linewidth(0.8)); 
+           draw((5,0)--(8,0), linewidth(0.8)); 
+           draw((5,-3)--(8,-3), linewidth(1.2));  
+                   \end{asy}
+                \end{center}
+\begin{flushleft}
+    
+Pero también podemos pensar de la siguiente forma: para cada pantalón puedo elegir $3$ camisas, como tengo $2$ pantalones entonces tengo $3\times 2=6$ posibles atuendos.
+Eso es básicamente lo que nos trata de explicar el principio de producto, el cuál se enuncia como sigue.
+\end{flushleft}
+\begin{principio}
+    [Principio del producto] 
+    Si una cierta tarea puede realizarse de $m$ maneras, y para cada una de esas maneras, una segunda tarea puede realizarse de $n$ maneras distintas entonces las dos tareas juntas pueden realizarse de $mn$ maneras.
+\end{principio}
+\begin{flushleft}
+    
+
+Trata de enteder el principio anterior; veamos ahora otro ejemplo
+\end{flushleft}
+\begin{example}
+    ¿Cuántas palabras de tres letras se pueden formar si se dispone de un alfabeto con dos letras: $a$ y $b$. (Nota: Son permisibles palabras como $bba$)
+\end{example}
+
+\begin{flushleft}
+    Haz el diagrama de árbol como el de antes.
+
+    \vspace*{0.3cm}
+
+    Veamos una forma usando el principio del producto, pongamos una línea para cada letra de las palabras que queremos 
+    \begin{center}
+        \begin{asy}
+            size(4cm);
+            draw((0,0)--(2,0));
+            draw((2.5,0)--(4.5,0));
+            draw((5,0)--(7,0));
+            label("2",(1,0.3));
+            label("2",(3.5,0.3));
+            label("2",(6,0.3));
+            label("a",(1,-0.3));
+            label("a",(3.5,-0.3));
+            label("a",(6,-0.3));
+            label("b",(1,-0.9));
+            label("b",(3.5,-0.9));
+            label("b",(6,-0.9));
+        \end{asy}
+    \end{center}
+\end{flushleft}
+\begin{flushleft}
+    
+    Para la primera letra de nuestra palabra podemos elegir entre $a$ y $b$, entonces tenemos dos formas para elegir la primera letra, para la segunda letra también podemos elegir entre $a$ y $b$, y hay $2$ formas de escoger la segunda letra, lo mismo pasa para la tercera letra, de modo que tenemos $2\times 2 \times 2=8$ palabras de $3$ letras en ese alfabeto
+\end{flushleft}
+
+\begin{example}
+
+    En la campaña local se postulan para ser presidentes $10$
+candidatos de derecha, $15$ de izquierda y $4$ ciudadanos independientes.
+
+\begin{enumerate}
+    \item[a)] Si el presidente debe ser elegido entre estos cadidatos, ¿cuántos posibles resultados hay para presidente?
+    \item[b)] Si lo que se debe elegir es un presidente y un vicesepresidente, ¿cuántos posibles resultados existen?
+    \item[c)] Responda la misma pregunta que en la parte anterior si ahora se
+    impone que ambos candidatos sean de el mismo partido?
+    \item [d)]... de diferente partido?
+    
+\end{enumerate}
+
+
+\end{example}
+\begin{flushleft}
+Para $a)$ podemos usar el \textit{principio de la suma} y vemos que hay $10+15+4=29$ posibles resultados para presidente.
+\vspace*{0.5cm}
+
+Para $b)$ vemos que como hay $29$ maneras de elegir al presidente, entonces  hay $28$ posibles maneras de elegir al vicesepresidente (pues la misma persona no puede ser presidente y vicesepresidente), de modo que hay $29\times 28=812$ posibles resultados. 
+\vspace*{0.5cm}
+
+Para $c)$, vea la siguiente tabla
+
+\[ \begin{array}{|c|c|c|c|}\hline
+\text{Partido}&\text{\small{Maneras elegir presidente}} & \text{\small{Maneras elegir presidente}} &\text{Resultado}\\ \hline
+
+\text{Derecha} & 10 & 9& 10\times 9=90 \\ \hline
+\text{Izquierda} & 15 & 14 & 15\times 14=210 \\ \hline
+\text{Independientes} & 4 & 3 & 4\times 3=12 \\ \hline
+    
+\end{array}\]
+Ahora basta con sumar cada casa separado para obtener la respuesta total $\underline{90+210+12=312}$
+
+\vspace*{0.3cm}
+El ejercicio $d)$ se deja como ejercicio al lector
+\vspace*{0.5cm}
+\end{flushleft}
+
+
+
+\begin{example}
+    Tengo 3 libros de álgebra, 2 de combinatoria y 4 de geometría, ¿de cuántas formas puedo obsequiarle a mis amigos Alan y Alejandro un libro a cada uno?
+\end{example}
+\begin{flushleft}
+Tengo $9$ formas de obsequiarle un libro a Alan y entonces, $8$ posibles libros para regalarle a Alejandro, de modo que hay $9\times 8=72$ formas de obsequiar mis libros a mis dos amigos.
+
+
+\begin{example}
+    
+Supongamos ahora, que me peleé con Alejandro y le regalaré los dos libro sólo a Alan, ¿De cuántas formas puedo hacer eso?
+\end{example}
+Quizá pensemos que el resultado sería lo mismo, pero en el ejemplo anterior IMPORTABA a quien le daba algún libro, sin embargo en este ejemplo es irrelevante, como le voy a dar ambos libros a Alan no importa el orden de elegir los libros, de modo el siguiente argumento es incorrecto
+
+\begin{center}
+    \textcolor{red}{"Tengo $9$ maneras de elegir el primer libro, y $8$ maneras de elegir el segundo entonces hay $9\times 8=72$ maneras de obsequiarle libros a $\textit{Alan}$"}
+\end{center}
+
+no hay algo como un primer y segundo libro aquí, el orden no importa. Trata de deducir que se debe hacer aquí para obtener el resultado.
+
+\end{flushleft}
+
+\begin{example}
+    ¿Cuántas placas distintas hay con dos letras a
+    la izquierda y tres números a la derecha? (Nota: Consideraremos el
+    alfabeto de 27 letras castellanas.)
+\end{example}
+
+\begin{flushleft}
+Pongamos $5$ casillas que forman cada placa, 
+\end{flushleft}
+\[\underbrace{\underline{27}\times\underline{27}}_{\text{las dos letras}}\times\underbrace{\underline{10}\times \underline{10} \times \underline{10}}_{\text{los tres números}}\]
+\vspace*{0.5cm}
+\begin{flushleft}
+Para la primer letra de nuestra placa, podemos elegir cualquiera dentro de las 27 letras del alfabeto, para la segunda letra también podemos elegir cualquiera de las 27 letras del alfabeto, y para los números podemos elegir en cada casilla cualquiera de los $10$  dígitos, de modo que la respuesta es $\boxed{27\times 27\times 10\times 10\times 10=729000}$
+\end{flushleft}
+
+
+\subsection{Ejercicios}
+
+\begin{exercise}
+    ¿De cuántos modos se puede escoger una vocal y una consonante de la palabra \textit{Alejandro}?
+\end{exercise}
+\begin{exercise}
+    ¿De cuántas formas se pueden sentar $5$ personas
+en $5$ sillas numeradas del $1$ al $5$?
+\end{exercise}
+\begin{exercise}
+    ¿Cuántas palabras (no necesariamente pronunciables)
+hay de exactamente $4$ caracteres usando el alfabeto $\{m, a, i\}$?
+\end{exercise}
+\begin{exercise}
+    ¿Cuántas banderas bicolores se pueden formar si
+se dispone de 4 lienzos de tela de colores distintos y un asta? (Nota:
+Banderas como rojo-rojo no son permisibles; por otro lado, es importante el color que queda junto al asta, de esta manera banderas como
+rojo-azul y azul-rojo se consideran distintas.)
+\end{exercise}
+\begin{exercise}
+    ¿Cuántas placas distintas hay con dos letras a
+    la izquierda y tres números a la derecha si $\textbf{no}$ se pueden repetir letras ni números?
+\end{exercise}
+\begin{exercise}
+    Desde San Luis Potosí hacia Querétaro hay $3$ caminos
+diferentes que se pueden tomar y hay dos hacia Guanajuato. Si se
+planea ir desde Quéretaro hacia Guanajuato reconociendo San Luis
+Potosí ¿cuántas maneras existen de elejir la ruta?
+\end{exercise}
+
+\begin{example}
+    Supongamos que tienes un grupo de $5$ libros diferentes y quieres elegir $3$ libros para llevar contigo de viaje. ¿De cuántas formas distintas puedes seleccionar los $3$ libros?
+\end{example}
+
+Veamos el siguiente argumento
+\begin{center}
+    \textcolor{red}{"El primer libro lo podemos elegir de $5$ maneras, el segundo de $4$ formas, y el tercero de $3$ formas de modo que por el $\textit{principio del producto}$ tenemos $5\times4\times3=60$ maneras"}
+\end{center}
+\begin{flushleft}
+    
+
+dicho argumento no es correcto pues nos da igual el orden en que eligamos los libros. ¿Pero qué podemos hacer en este caso? (Convéncete de que el anterior argumento es incorrecto)
+\end{flushleft}
+\begin{exercise}
+    Trata de averiguar que se puede hacer aquí (de todos modos pongo la solución abajo)
+\end{exercise}
+
+\begin{flushleft}
+    \textit{Solución.} Digamos que los libros son $A,B,C,D,E$, lo que está pasando al multiplicar $5\times 4\times 3$, es que estamos contando, por ejemplo, el caso cuando elegimos $A,B,C$, pero también estamos considerando cuando agarramos $A,C,B$ o $B,A,C$ que vienen siendo igual, al final estamos agarrando los mismos libros.
+\end{flushleft}
+    
+\begin{flushleft}
+    
+    Entonces lo que queremos quitar es estas repiticiones, en este caso, de las elecciones $ABC, ACB, BAC, BCA, CAB, CBA$ solo queremos considerar una, y así para cada $3$ libros elegidos, de modo que para eliminar esas repeticiones basta dividir entre $6$, entonces hay $\frac{60}{6}=10$ maneras de escoger $3$ libros (Convéncete de esto).
+\end{flushleft}
+
+\begin{flushleft}
+Pero, ¿de dónde sale ese 6?, si nos damos cuenta estamos dividiendo en el número de formas de ordernar tres letas $A,B,C$ en tres posiciones, y ese número precisamente sí es $3\times 2\times 1$
+\end{flushleft}
+\begin{example}
+    En una baraja de $52$ cartas de póker. ¿Cuántas posibles manos de $5$ cartas hay?
+\end{example}
+\begin{flushleft}
+    $\textit{Solución.}$ para elegir $5$ cartas hay $52\times 51\times 50\times 49\times 48$ posibles maneras, pero aquí estamos contando repeticiones, para eliminar esas repeticiones basta dividir entre $5\times 4\times 3\times 2\times 1$, de modo que hay $\frac{52\times51\times 50\times 49\times 48\times 47}{6\times 5\times 4\times 3\times 2\times 1}=20358520$ de estas manos.
+\end{flushleft}
+
+\subsection*{Factorial!}
+\begin{flushleft}
+    
+Veamos rápidamente esta simbología que nos puede ahorrar un poco de tinta, decimos que el factorial de un entero positivo $n$, se denota por $n!$, es igual al producto de los enteros positivos desde $n$ hasta $1$ o bien 
+\[n!=n\times (n-1)\times (n-2)\times\cdots\times 2\times  1\]
+Podemos relacionar el factorial con el siguiente ejemplo:
+\begin{example}
+    ¿Cuál es el número de formas distintas de ordenar $n$ objetos distintos?
+\end{example}
+Notemos que el objeto que irá primero tiene $n$ formas de ser escogido el que va segundo $n-1$, y así sucesivamente hasta el último que tendrá una forma de ser escogido, de modo que por el principio del producto hay \[n\times (n-1)\times (n-2)\times\cdots\times 2\times  1\] lo cuál representa a $n!$, el factorial aparece muy naturalmente al momento de contar.
+\end{flushleft}
+
+\begin{example}
+    ¿Cuántos anagramas (una palabra formada al permutar letras de otra) se pueden hacer de la palabra "matematica" (sin acento)?
+\end{example}
+Veamos que no estan simple como decir que la respuesta es $10!$, hay algunas letras iguales (¿por qué?), de modo que podemos elegir todas las palabras que hay considerando como si todas las letras fueran diferentes, aquí sí hay $10!$, pero ahora estamos considerando  como si las $m$´s y las $a$´s fueran distintas, de modo que basta dividir entre las formas de reordenar estas letras en nuestra palabra, lo cuál es $2!\times 3!$, de modo que la respuesta es $\frac{10!}{2!\times 3!}=302400$ (si no te quedó claro prueba con la palabra "alan" y haz todos los anagramas)
+\begin{example}\label{ejemplo_cuadernos}
+    ¿De cuántas maneras pueden ordenarse en un
+estante 3 cuadernos rojos, 4 azules y 2 verdes (los cuadernos del mismo color son indistinguibles)?
+\end{example}
+\begin{flushleft}
+    $\textit{Solución.}$ 
+    \begin{center}
+    \begin{asy}
+        import graph; size(7cm); 
+    real labelscalefactor = 0.5; /* changes label-to-point distance */
+    pen dps = linewidth(0.7) + fontsize(10); defaultpen(dps); /* default pen style */ 
+    pen dotstyle = black; /* point style */ 
+    real xmin = -0.776924569124245, xmax = 3.6571441189657987, ymin = -0.7085639511239163, ymax = 1.921750314197803;  /* image dimensions */
+    pen zzttqq = rgb(0.6,0.2,0); 
+    
+    filldraw((0.2,1.2)--(0.4,1.2)--(0.4,0)--(0.2,0)--cycle, lightblue,blue); 
+    filldraw((0.4,1.2)--(0.6,1.2)--(0.6,0)--(0.4,0)--cycle, lightred,red); 
+    filldraw((0.6,1.2)--(0.8,1.2)--(0.8,0)--(0.6,0)--cycle, lightblue,blue); 
+    filldraw((0.8,1.2)--(1,1.2)--(1,0)--(0.8,0)--cycle, lightgreen,green); 
+    filldraw((1,1.2)--(1.2,1.2)--(1.2,0)--(1,0)--cycle, lightred,red); 
+    filldraw((1.2,1.2)--(1.4,1.2)--(1.4,0)--(1.2,0)--cycle, lightblue,blue); 
+    filldraw((1.4,1.2)--(1.6,1.2)--(1.6,0)--(1.4,0)--cycle, lightgreen,green); 
+    filldraw((1.6,1.2)--(1.8,1.2)--(1.8,0)--(1.6,0)--cycle, lightred,red); 
+    filldraw((1.8,1.2)--(2,1.2)--(2,0)--(1.8,0)--cycle, lightblue,blue); 
+     /* draw figures */
+    draw((0,0)--(0.2,1.2), linewidth(1)); 
+    draw((0.2,1.2)--(2,1.2), linewidth(1)); 
+    draw((2,1.2)--(2.2,0), linewidth(1)); 
+    draw((0,0)--(2.2,0), linewidth(1)); 
+    draw((2,0)--(2,1.2), linewidth(1)); 
+    draw((1.8,1.2)--(1.8,0), linewidth(1)); 
+    draw((0.2,0)--(0.2,1.2), linewidth(1)); 
+    draw((0.4,1.2)--(0.4,0), linewidth(1)); 
+    draw((0.6,0)--(0.6,1.2), linewidth(1)); 
+    draw((0.8,1.2)--(0.8,0), linewidth(1)); 
+    draw((1,0)--(1,1.2), linewidth(1)); 
+    draw((1.2,1.2)--(1.2,0), linewidth(1)); 
+    draw((1.4,0)--(1.4,1.2), linewidth(1)); 
+    draw((1.6,1.2)--(1.6,0), linewidth(1)); 
+    draw((0.2,1.2)--(0.4,1.2), linewidth(1) + zzttqq); 
+    draw((0.4,1.2)--(0.4,0), linewidth(1) + zzttqq); 
+    draw((0.4,0)--(0.2,0), linewidth(1) + zzttqq); 
+    draw((0.2,0)--(0.2,1.2), linewidth(1) + zzttqq); 
+    draw((0.4,1.2)--(0.6,1.2), linewidth(1) + zzttqq); 
+    draw((0.6,1.2)--(0.6,0), linewidth(1) + zzttqq); 
+    draw((0.6,0)--(0.4,0), linewidth(1) + zzttqq); 
+    draw((0.4,0)--(0.4,1.2), linewidth(1) + zzttqq); 
+    draw((0.6,1.2)--(0.8,1.2), linewidth(1) + zzttqq); 
+    draw((0.8,1.2)--(0.8,0), linewidth(1) + zzttqq); 
+    draw((0.8,0)--(0.6,0), linewidth(1) + zzttqq); 
+    draw((0.6,0)--(0.6,1.2), linewidth(1) + zzttqq); 
+    draw((0.8,1.2)--(1,1.2), linewidth(1) + zzttqq); 
+    draw((1,1.2)--(1,0), linewidth(1) + zzttqq); 
+    draw((1,0)--(0.8,0), linewidth(1) + zzttqq); 
+    draw((0.8,0)--(0.8,1.2), linewidth(1) + zzttqq); 
+    draw((1,1.2)--(1.2,1.2), linewidth(1) + zzttqq); 
+    draw((1.2,1.2)--(1.2,0), linewidth(1) + zzttqq); 
+    draw((1.2,0)--(1,0), linewidth(1) + zzttqq); 
+    draw((1,0)--(1,1.2), linewidth(1) + zzttqq); 
+    draw((1.2,1.2)--(1.4,1.2), linewidth(1) + zzttqq); 
+    draw((1.4,1.2)--(1.4,0), linewidth(1) + zzttqq); 
+    draw((1.4,0)--(1.2,0), linewidth(1) + zzttqq); 
+    draw((1.2,0)--(1.2,1.2), linewidth(1) + zzttqq); 
+    draw((1.4,1.2)--(1.6,1.2), linewidth(1) + zzttqq); 
+    draw((1.6,1.2)--(1.6,0), linewidth(1) + zzttqq); 
+    draw((1.6,0)--(1.4,0), linewidth(1) + zzttqq); 
+    draw((1.4,0)--(1.4,1.2), linewidth(1) + zzttqq); 
+    draw((1.6,1.2)--(1.8,1.2), linewidth(1) + zzttqq); 
+    draw((1.8,1.2)--(1.8,0), linewidth(1) + zzttqq); 
+    draw((1.8,0)--(1.6,0), linewidth(1) + zzttqq); 
+    draw((1.6,0)--(1.6,1.2), linewidth(1) + zzttqq); 
+    draw((1.8,1.2)--(2,1.2), linewidth(1) + zzttqq); 
+    draw((2,1.2)--(2,0), linewidth(1) + zzttqq); 
+    draw((2,0)--(1.8,0), linewidth(1) + zzttqq); 
+    draw((1.8,0)--(1.8,1.2), linewidth(1) + zzttqq); 
+    draw((0,0)--(2.2,0)--(2,1.2)--(0.2,1.2)--cycle,linewidth(3)+zzttqq);
+
+    \end{asy}
+\end{center}
+    Hay $9!$ de acomodarlos sin importar el orden, pero luego tenemos que dividir entre las $3!\times 4!\times 2!$ manera de revolver los libros dado un cierto acomodo, la respuesta es $\frac{9!}{3!\times 4!\times 2!}=1260$ (podemos notar que este ejemplo es equivalente a encontrar el número de anagramas de la palabra "rrraaaavv")
+\end{flushleft}
+\section{Problemas}
+
+\Opensolutionfile{all-hints}
+
+\Opensolutionfile{all-answers}
+
+\begin{problem}
+    ¿De cuántas maneras distintas se pueden sentar 4 personas en una fila de 8 asientos numerados
+del 1 al 8? 
+\begin{hint}
+    la primera personas tiene 8 posibles asientos, la segunda persona tiene 7 posibles asientos, la tercera tiene 6 y la cuarta 5
+\end{hint}
+\begin{answer}
+    $8\times 7\times 6\times 5=1680$
+\end{answer}
+\end{problem}
+\vspace{0.1cm}
+\begin{problem}
+    ¿Cuántas placas distintas hay con dos letras a la izquierda y tres números a la
+derecha... 
+\begin{itemize}
+    \item[a)] si $\textbf{no}$ permitimos repeticiones?
+    \item[b)]  si $\textbf{no}$ permitimos repeticiones y solo se permiten vocales (A,E,I,O,U)  dígitos pares?
+\end{itemize}
+
+\begin{hint}
+\begin{itemize}
+    \item[a)] la primera letra tiene 27 maneras, la segunda letra solo 26 maneras; haz lo mismo con los números
+     \item [b)] si solo se permiten vocales y dígitos pares entonces la primeras dos letras pueden ser escogidas de $5\times 4$ manera y los dígitos pares de $5\times\times 4\times 3$(pues hay 5 pares$\{0,2,4,6,8\}$)
+     \end{itemize}
+\end{hint}
+\begin{answer}
+   \begin{itemize}
+       \item [a)] $\underline{27}\times \underline{26}\times \underline{10}\times\underline{9}\times\underline{8}=960336$
+       \item [b)]$\underline{5}\times \underline{4}\times \underline{5}\times\underline{4}\times\underline{3}=1200$
+   \end{itemize}
+\end{answer}
+\end{problem}
+\vspace*{0.1cm}
+
+\begin{problem}
+    De un grupo de $10$ niños y $15$ niñas se quiere
+    formar una colección de $5$ jóvenes que tenga exactamente $3$ niños y $2$ niñas.
+    ¿Cuántas colecciones distintas se pueden formar?
+
+  \begin{hint}
+  formas escoger niñas: $\frac{15\times14}{2}$, formas escoger niños $\frac{15\cdot14\cdot12}{3\times2\times1}$, la respuesta es el producto de esas dos (¿por qué?)
+  \end{hint}
+  \begin{answer}
+      $\frac{15\times14}{2}\times\frac{15\cdot14\cdot12}{3\times2\times1}=12600$
+  \end{answer}
+\end{problem}
+\vspace{0.1cm}
+\begin{problem}
+    De un grupo de 10 niños y 15 niñas se quiere formar una colección de 5 jóvenes que tenga a lo más 2 niñas ¿Cuántas colecciones distintas se pueden formar?
+    \begin{hint}
+        Haz lo casos de donde se escogen exactamente $0$ niños, donde se escogen exactamente $1$ niña y donde se escogen exactamente $2$ niñas y suma los resultados.
+    \end{hint}
+   \begin{answer}
+       $\underbrace{\frac{15\times14}{2}\times\frac{15\cdot14\cdot12}{3\times2\times1}}_{\text{2 niñas}}+\underbrace{15\times \frac{10\times 8\times 7\times 6}{4\times3\times2\times 1}}_{\text{1 niña}}+\underbrace{\frac{10\times9\times 8\times 7\times 6}{5\times 4\times 3\times 2\times 2}}_{\text{0 niñas}}=12600+3150+252=16002$
+   \end{answer}
+\end{problem}
+\vspace*{0.1cm}
+
+\begin{problem}
+    Un grupo de 15 personas quiere dividirse en 3 equipos de 5 personas cada uno. Cada uno tendrá una labor específica distinta a las demás. ¿De cuántas formas distintas es posible hacer la distribución?
+    \begin{hint}
+        El primer equipo puede escogerse de $\frac{15\times 14\times 13\times 12\times 11}{5!}=3003$ maneras, como ya se eligieron $5$ personas, el segundo equipo puede elegirse de $\frac{10\times 9\times 8\times 7\times 6}{5!}=252$ maneras, ¿y para el tercer equipo?
+    \end{hint}
+    \begin{answer}
+        $\frac{15\times 14\times 13\times 12\times 11}{5!}=3003\times \frac{10\times 9\times 8\times 7\times 6}{5!}=252\times 1=756756$
+    \end{answer}
+    \end{problem}
+    \vspace*{0.1cm}
+    \begin{problem}
+        Un grupo de 15 personas quiere dividirse en 3 equipos de 5 personas cada uno. Todos los equipos tendrán la misma labor. ¿De cuántas formas es posible hacer la distribución?
+        \begin{hint}
+            Haga el ejemplo anterior. Como en este caso no hay distinción entre la labor de los equipos no nos importa el orden en que eligamos los equipos(no hay primer equipo, segundo equipo y tercer equipo) de modo que basta con dividir entre el número de permutaciones de los equipos que es $3!$.
+        
+        \end{hint}
+        \begin{answer}
+            $\frac{\frac{10\times 9\times 8\times 7\times 6}{5!}=252}{3}=\frac{756756}{3}=126126$
+        \end{answer}
+    \end{problem}
+    \vspace*{0.1cm}
+   \begin{problem}
+       ¿Cuántas palabras de 7 letras existen permutando 4 letras $A$ y $3$ letras $B$?, une ejemplo de una palabras buscada es $AABBAAB$
+       \begin{hint}
+           Nota que basta contar  el número de maneras de colocar las 4 $A´s$ pues al hacerlo el lugar de las $B´s$ ya queda fijo
+       \end{hint}
+       \begin{answer}
+           $\frac{7\times 6\times 5\times 4}{4!}=35$
+       \end{answer}
+   \end{problem}
+   \vspace{0.1cm}
+   
+\begin{problem}
+    ¿De cuántas maneras pueden ordenarse en un
+    estante 3 cuadernos rojos, 4 azules y 2 verdes, si los verdes no deben
+    quedar juntos?
+   \begin{hint}
+Cuenta primero el número de formas sin que te importe la condición de que los verdes esten juntos (mira el $\hyperref[ejemplo_cuadernos]{\text{Ejemplo 1.21}}$), luego resta el número de casos cuando los verdes estan juntos(si los verdes están juntos es más fácil considerarlos como un libro solo)
+   \end{hint}
+   \begin{answer}
+       $\underbrace{\frac{9!}{3!\times 4!\times 2!}}_{\text{Sin importar los colores}}-\underbrace{\frac{8!}{3!\times 4!}}_{\text{Con los verdes siempre juntos}}=1260-280=980$
+   \end{answer}
+\end{problem}
+\vspace{0.1cm}
+\begin{problem}
+       [\href{https://artofproblemsolving.com/community/c5h2345569p18954212}{2020 AMC 8}]
+       Zara tiene 4 cuatro canicas diferentes, una azul, una blanca, una café y una dorada. Las quiere poner en una fila de un estante, pero no quiere que la café y la dorada estén juntas. ¿De cuántas formas puede hacer esto?
+       \begin{hint}
+           Nota que la respuesta es igual al número de maneras de acomodar las 4 canicas como sea, menos el número de colocarlas siempre estando juntas, puedes considerar el caso cuando están juntas como si fueran una misma canica, de modo que quieres acomodar en ese caso 3 canicas, pero recuerda multiplicar por 2 en este caso.
+       \end{hint}
+       \begin{answer}
+           $\underbrace{4!}_{\text{sin importar la condición}}-\underbrace{3!\times 2}_{\text{siempre juntas}}=$
+       \end{answer}
+   \end{problem}
+   \vspace{0.1cm}
+\begin{problem}
+    [\href{https://artofproblemsolving.com/community/c5h2765682p24217158}{2022 AMC 8}]
+¿De cuántas formas se pueden permutar las letras en "$BEEKEEPER$" de manera que dos o más letras "$E$" no aparezcan juntas?
+\begin{hint}
+    como las $E$ deben estar separadas entonces deben estar en las posiciones $1,3,5,7,9$ (¿Por qué?) entonces basta acomodar las otras letras 
+\end{hint}
+\begin{answer}
+    $\underline{1} \times \boxed{4} \times \underline{1}\times \boxed{3} \times \underline{1}\times \boxed{2}\times \underline{1}\times \boxed{1}\times \underline{1}=24$
+\end{answer}
+\end{problem}
+\begin{problem}
+    ¿Cuántas diagonales (los lados del polígono cuentan como diagonales) tiene un polígono regular de $n$ lados?
+    \begin{hint}
+        Contar el número de diagonales es equivalente a contar el número de formas de elegir dos vértices distintos (¿Por qué?)
+    \end{hint}
+    \begin{answer}
+        $\frac{n\times(n-1)}{2}$
+    \end{answer}
+   \end{problem}
+   \vspace*{0.1cm}
+
+   \begin{problem}
+       ¿Cuántos números de tres cifras, sin ninguna cifra igual a 0, existen con exactamente dos cifras iguales?
+       \begin{hint}
+           Primero elige el lugar (unidades, decenas o centenas) dónde estará la cifra que no es igual tienes $3$ formas de esto, luego elige el número que estará allí, tienes 9 formas para esto, luego tienes $8$ formas para elegir que los otros dos números que van en las otras cifras
+       \end{hint}
+       \begin{answer}
+           $3\times 9\times 8=216$
+       \end{answer}
+   \end{problem}
+\vspace{0.1cm}
+\begin{problem}
+        ¿De cuántas maneras se puede colorear el siguiente mapa de cuatro países si se dispone de 7 colores distintos, y se pueden repetir, con la condición de que dos áreas que comparten lado deben usar colores distintos?
+        \begin{center}
+            \begin{asy}
+                size(2.7cm);
+                draw((0,0)--(2,0)--(3,3)--(0,1.5)--cycle);
+                draw((1,0)--(1,2));
+                draw((0,1)--(2.5,1.5));
+            \end{asy}
+        \end{center}
+ \begin{hint}
+ Nombremos las regiones
+      \begin{center}
+            \begin{asy}
+                size(2.7cm);
+                draw((0,0)--(2,0)--(3,3)--(0,1.5)--cycle);
+                draw((1,0)--(1,2));
+                draw((0,1)--(2.5,1.5));
+                label("A",(0.7,1.5));
+                label("D", (0.7,0.5));
+                label("C", (1.5,0.7));
+                label("B", (1.6,1.85));
+            \end{asy}
+        \end{center}
+        A tiene 7 formas de colorearse, $B$ tiene 6 maneras, ahora dividamos en dos casos: si $C$ es del mismo color que $A$, ¿de cuántas maneras se puede colorear $D$?
+        si $C$ es de distinto color que $A$, ¿de cuántas manera se puede colorear $D$?
+ \end{hint}
+ \begin{answer}
+     $\underbrace{7\times 6\times 1\times 6}_{\text{A y C del mismo color}}+ \underbrace{7\times 6\times 5\times 5}_{\text{A y C de diferente color}}=1302$
+ \end{answer}
+    \end{problem}
+    \vspace{0.1cm}
+\begin{problem}
+    
+        De cuántas manera se pueden acomodar $4$ personas en una mesa redonda con $4$ sillas, si se considera que dos acomodos son iguales si puedes rotar la mesa y llegar a la misma posición?$\ldots$¿Y si fueran $n$ personas en $n$ sillas en una mesa redonda?
+\begin{hint}
+    si los amigos son $A,B,C,D$ deja fijo a $A$, basta con contar el número de formas de acomodar a $B,C,D$ en tres lugares (¿Por qué)?
+    \begin{center}
+        \begin{asy}
+        size(5cm);
+            draw(circle((0,0),1));
+            draw(circle((0,1.3),0.2));
+            draw(circle((0,-1.3),0.2));
+            draw(circle((1.3,0),0.2));
+            draw(circle((-1.3,0),0.2));
+            label("$A$",(0,1.34));
+        \end{asy}
+    \end{center}
+\end{hint}
+\begin{answer}
+    4 personas: $3!, n$ personas: $(n-1)!$
+\end{answer}
+    \end{problem}
+    \vspace*{0.1cm}
+\begin{problem}
+    ¿Cuántos caminos existen para ir de $A$ a $B$ caminando
+    por las lineas marcadas si solo se puede ir hacia arriba o hacia la
+    derecha?
+    \begin{center}
+        \begin{asy}
+    /* Geogebra to Asymptote conversion, documentation at artofproblemsolving.com/Wiki go to User:Azjps/geogebra */
+import graph; size(4.5cm); 
+real labelscalefactor = 0.5; /* changes label-to-point distance */
+pen dps = linewidth(0.7) + fontsize(10); defaultpen(dps); /* default pen style */ 
+pen dotstyle = black; /* point style */ 
+real xmin = -3.78, xmax = 19.18, ymin = -4.68, ymax = 8.94;  /* image dimensions */
+
+ /* draw figures */
+draw((0,0)--(5,0), linewidth(1)); 
+draw((5,0)--(5,3), linewidth(1)); 
+draw((5,3)--(0,3), linewidth(1)); 
+draw((0,3)--(0,0), linewidth(1)); 
+draw((1,0)--(1,3), linewidth(1)); 
+draw((2,3)--(2,0), linewidth(1)); 
+draw((3,0)--(3,3), linewidth(1)); 
+draw((4,3)--(4,0), linewidth(1)); 
+draw((5,0)--(5,3), linewidth(1)); 
+draw((5,3)--(0,3), linewidth(1)); 
+draw((0,2)--(5,2), linewidth(1)); 
+draw((5,1)--(0,1), linewidth(1)); 
+ /* dots and labels */
+dot((0,0),dotstyle); 
+label("$A$", (-0.6,-0.6), NE * labelscalefactor); 
+dot((5,3),dotstyle); 
+label("$B$", (5.08,3.2), NE * labelscalefactor); 
+clip((xmin,ymin)--(xmin,ymax)--(xmax,ymax)--(xmax,ymin)--cycle); 
+ /* end of picture */
+        \end{asy}
+    \end{center}
+
+    \begin{hint}
+        veamos que la formas de llegar a $B$ es la suma de las formas de llegar a los puntos que conectan con $B$... y así para todos los puntos
+        
+        \begin{center}
+            \begin{asy}
+                /* Geogebra to Asymptote conversion, documentation at artofproblemsolving.com/Wiki go to User:Azjps/geogebra */
+             import graph; size(5cm); 
+             real labelscalefactor = 2; /* changes label-to-point distance */
+             pen dps = linewidth(0.7) + fontsize(10); defaultpen(dps); /* default pen style */ 
+             pen dotstyle = black; /* point style */ 
+             real xmin = 0.15468444026394537, xmax = 1.0070058932645376, ymin = 0.062267594226506254, ymax = 0.5678694317643131;  /* image dimensions */
+             
+              /* draw figures */
+             draw((0,0.3)--(0.5,0.3), linewidth(1)); 
+             draw((0.5,0.3)--(0.5,0), linewidth(1)); 
+             draw((0.4,0.3)--(0.4,0), linewidth(1)); 
+             draw((0.5,0.2)--(0,0.2), linewidth(1)); 
+             draw((0.3,0.3)--(0.3,0), linewidth(1)); 
+             draw((0.5,0.1)--(0,0.1), linewidth(1)); 
+             draw((0.2,0.3)--(0.2,0), linewidth(1)); 
+             draw(circle((0.5,0.3), 0.18485246985096648), linewidth(2) + red); 
+             draw((0.39,0.32)--(0.4,0.31), linewidth(1)); 
+             draw((0.4,0.31)--(0.41,0.32), linewidth(1)); 
+             draw((0.4,0.31)--(0.4,0.38), linewidth(1)); 
+             draw((0.52,0.19)--(0.51,0.2), linewidth(1)); 
+             draw((0.51,0.2)--(0.52,0.21), linewidth(1)); 
+             draw((0.51,0.2)--(0.58,0.2), linewidth(1)); 
+              /* dots and labels */
+             dot((0.5,0.3),dotstyle); 
+             label("$B$", (0.5028889363068703,0.30727288994967256), NE * labelscalefactor); 
+             dot((0.4,0.3),dotstyle); 
+             dot((0.5,0.2),dotstyle); 
+             clip((xmin,ymin)--(xmin,ymax)--(xmax,ymax)--(xmax,ymin)--cycle); 
+              /* end of picture */
+             \end{asy}
+        \end{center}
+    \end{hint}
+    \begin{answer}
+$35+21=56$
+  
+    
+    \begin{asy}
+       /* Geogebra to Asymptote conversion, documentation at artofproblemsolving.com/Wiki go to User:Azjps/geogebra */
+import graph; size(4.5cm); 
+real labelscalefactor = 0.5; /* changes label-to-point distance */
+pen dps = linewidth(0.7) + fontsize(10); defaultpen(dps); /* default pen style */ 
+pen dotstyle = black; /* point style */ 
+real xmin = -3.78, xmax = 19.18, ymin = -4.68, ymax = 8.94;  /* image dimensions */
+
+ /* draw figures */
+draw((0,0)--(5,0), linewidth(1)); 
+draw((5,0)--(5,3), linewidth(1)); 
+draw((5,3)--(0,3), linewidth(1)); 
+draw((0,3)--(0,0), linewidth(1)); 
+draw((1,0)--(1,3), linewidth(1)); 
+draw((2,3)--(2,0), linewidth(1)); 
+draw((3,0)--(3,3), linewidth(1)); 
+draw((4,3)--(4,0), linewidth(1)); 
+draw((5,0)--(5,3), linewidth(1)); 
+draw((5,3)--(0,3), linewidth(1)); 
+draw((0,2)--(5,2), linewidth(1)); 
+draw((5,1)--(0,1), linewidth(1)); 
+ /* dots and labels */
+dot((0,0),dotstyle); 
+label("$A$", (-0.6,-0.6), NE * labelscalefactor); 
+dot((5,3),dotstyle); 
+label("$B$", (5.08,3.2), NE * labelscalefactor); 
+clip((xmin,ymin)--(xmin,ymax)--(xmax,ymax)--(xmax,ymin)--cycle); 
+
+label("$1$", (1,0), dir(-90), fontsize(8));
+label("$1$", (2,0), dir(-90), fontsize(8));
+label("$1$", (3,0), dir(-90), fontsize(8));
+label("$1$", (4,0), dir(-90), fontsize(8));
+label("$1$", (5,0), dir(-90), fontsize(8));
+label("$1$", (0,1), dir(-45), fontsize(8));
+label("$1$", (0,2), dir(-45), fontsize(8));
+label("$1$", (0,3), dir(-45), fontsize(8));
+label("$2$", (1,1), dir(-45), fontsize(8));
+label("$3$", (2,1), dir(-45), fontsize(8));
+label("$4$", (3,1), dir(-45), fontsize(8));
+label("$5$", (4,1), dir(-45), fontsize(8));
+label("$6$", (5,1), dir(-45), fontsize(8));
+label("$3$", (1,2), dir(-45), fontsize(8));
+label("$6$", (2,2), dir(-45), fontsize(8));
+label("$10$", (3,2), dir(-45), fontsize(8));
+label("$15$", (4,2), dir(-45), fontsize(8));
+label("$21$", (5,2), dir(-45), fontsize(8));
+label("$4$", (1,3), dir(-45), fontsize(8));
+label("$10$", (2,3), dir(-45), fontsize(8));
+label("$20$", (3,3), dir(-45), fontsize(8));
+label("$35$", (4,3), dir(-45), fontsize(8));
+label("$56$", (5,3), dir(-45), fontsize(8));
+
+
+
+draw(circle((2,0), 0.05));
+draw(circle((3,0), 0.05));
+draw(circle((4,0), 0.05));
+draw(circle((5,0), 0.05));
+draw(circle((0,1), 0.05));
+draw(circle((0,2), 0.05));
+draw(circle((0,3), 0.05));
+draw(circle((1,1), 0.05));
+draw(circle((2,1), 0.05));
+draw(circle((3,1), 0.05));
+draw(circle((4,1), 0.05));
+draw(circle((5,1), 0.05));
+draw(circle((1,2), 0.05));
+draw(circle((2,2), 0.05));
+draw(circle((3,2), 0.05));
+draw(circle((4,2), 0.05));
+draw(circle((5,2), 0.05));
+draw(circle((1,3), 0.05));
+draw(circle((2,3), 0.05));
+draw(circle((3,3), 0.05));
+draw(circle((4,3), 0.05));
+
+
+
+ /* end of picture */
+        
+ \end{asy}
+
+    \end{answer}
+    
+    \end{problem}
+    \begin{problem}
+    [\href{https://artofproblemsolving.com/community/c5h2715570p23613322}{2022 AMC 10}]
+        El granjero tiene un campo rectangular dividido en una cuadrícula de $2\times2$ con 4 secciones. En cada sección, puede plantar maíz, trigo, soja o patatas. Sin embargo, no quiere cultivar maíz y trigo, o soja y patatas, en secciones adyacentes. ¿de cuántas formas puede el granjero elegir los cultivos para plantar en cada una de las cuatro secciones del campo?
+        \begin{center}
+\begin{asy}
+size(3.5cm);
+    draw((0,0)--(100,0)--(100,50)--(0,50)--cycle);
+draw((50,0)--(50,50));
+draw((0,25)--(100,25));
+\end{asy}
+\end{center}
+\begin{hint}
+    Nombra cada región
+    \begin{center}
+        \begin{asy}
+            size(3.5cm);
+    draw((0,0)--(100,0)--(100,50)--(0,50)--cycle);
+draw((50,0)--(50,50));
+draw((0,25)--(100,25));
+label("D",(25,12.5));
+label("C",(75,12.5));
+label("A",(25,37.5));
+label("B",(75,37.5));
+\end{asy}
+\end{center}
+Nota que podemos decir que en $A$ se plantará maíz y luego al resultado que obtengamos haciendo eso lo multiplicamos por 4 y esa es la respuesta (¿Por qué?); luego tenemos tres casos 
+\begin{enumerate}
+    \item[1)] en C hay maíz
+    \item[2)] en C hay trigo
+    \item[3)] en C hay soja
+    \item[4)] en C hay patatas
+\end{enumerate}
+Encuentra el número de casos que hay en cada caso y sumalas
+\end{hint}
+\begin{answer}
+    $4\cdot\Bigl(3\times 3+2\times2+2\times2+2\times2\Bigr)=84$
+\end{answer}
+    \end{problem}
+
+\begin{problem}
+    ¿Cuántos subconjuntos de $n$ objetos (digamos $A_1, A_2\cdots , A_n$) existen?
+    \begin{hint}
+        ¿Qué estrategia podemos usar para elegir un subconjunto?
+
+    \begin{center}
+        \begin{asy}
+            size(6cm);
+            draw((0,0)--(2,0));
+            draw((3,0)--(5,0));
+            draw((9,0)--(11,0));
+            dot((6,0));
+            dot((7,0));
+            dot((8,0));
+
+            label("$A_1$", (1,0.5));
+            label("$A_2$" ,(4,0.5));
+            label("$A_n$",(10,0.5));
+
+            label("si", (1,-0.5));
+            label("si" ,(4,-0.5));
+            label("si",(10,-0.5));
+
+            label("no", (1,-1));
+            label("no" ,(4,-1));
+            label("no",(10,-1));
+            
+        \end{asy}
+        
+    \end{center}
+
+    Basta con elegir si en tu subconjunto vas a poner a elegir a $A_1$ o no, si vas a elegir a $A_2$ o no, y así sucesivamente, de modo que hay dos formas para cada $A_i$ de forma que hay $2^n$ subcojuntos
+        
+    \end{hint}
+    \begin{answer}
+        $\underbrace{\underline{2}\times \underline{2}\cdots\times\underline{2}}_{n}=2^n$
+    \end{answer}
+\end{problem}
+
+\bigskip
+
+\section{Hints}
+\Closesolutionfile{all-hints}
+\begin{enumerate}
+  \input{all-hints.out}
+\end{enumerate}
+
+
+\bigskip
+
+\section{Respuestas}
+
+En esta lista en particular puede ser útil tener las respuesta para verificar si hiciste todo bien, escribo las repuestas de forma que puedas intuir un poco de donde vienen
+
+\Closesolutionfile{all-answers}
+\begin{enumerate}
+  \input{all-answers.out}
+\end{enumerate}
+
+
+\end{document} /* end of picture */
