@@ -1,0 +1,320 @@
+\documentclass[11pt]{scrartcl}
+\usepackage[sexy]{evan}
+\usepackage{amsthm}
+\renewcommand{\proofname}{Prueba}
+\usepackage{cancel}
+\usepackage{xcolor}
+\usepackage{answers}
+\Newassociation{hint}{hintitem}{all-hints}
+\renewcommand{\solutionextension}{out}
+\renewenvironment{hintitem}[1]{\item[\bfseries #1.]}{}
+\newcommand{\colorcancel}[2][black]{\renewcommand\CancelColor{\color{#1}}\cancel{#2}}
+\title{Criterios de divisibilidad}
+
+
+\author{AlanLG}
+\date{Marzo 2024}
+
+\begin{document}
+
+\maketitle
+
+\section{Lectura}
+En esta lista trabajaremos propiedades elementales de teoría de números, la rama de las matemáticas que estudia el conjunto de los números enteros denotado por $\mathbb{Z}$:
+\[\mathbb{Z}=\{\ldots,-2,-1,0,1,2,3,\ldots\}\]
+
+Así como el conjunto de los naturales denotado por $\mathbb{N}$
+
+\[\mathbb{N}=\{1,2,3,\ldots\}\]
+
+
+\subsection{Divisibilidad}
+Si $a$ y $b$ son dos número enteros ($a,b\in\mathbb{Z}$),decimos que $a$ divide a $b$ (ó bien $a\mid b$) si y solo si la división $\frac{a}{b}$ es entero, o bien
+\[a\mid b \iff \frac{b}{a}\in \mathbb{Z}\]
+
+También podemos decir que $a$ divide a $b$ si existe un entero $k$ tal que $b=a\cdot k$, o bien
+\[a\mid b \iff \exists\hspace{0.1cm} k\in\mathbb{Z} : b=a\cdot k\]
+
+Cuando $a$ \textbf{no divide} a $b$ lo denotamos por $a\nmid b$
+
+\begin{ejemplo*}
+    $7\mid 21$ pues $\frac{21}{7}=3\in \mathbb{Z}$
+\end{ejemplo*}
+\begin{ejemplo*}
+    $20\mid 100$ pues $100=20\cdot(50)$
+\end{ejemplo*}
+\begin{ejemplo*}
+    El 1 divide a todos los números (¿Por qué?)
+\end{ejemplo*}
+\subsection{Números primos}
+
+\begin{proposition*}
+[Definición de número primo]
+    Decimos que un número entero positivo $p\neq \pm 1$ es primo si sus únicos divisores son $\pm1$ y $\pm p$
+\end{proposition*}
+\begin{definition*}
+    Decimos que un número entero positivo diferente de $\pm 1$ es \textbf{Compuesto} si no es primo, a los número 1 y -1 se le llaman \textit{unidades}
+\end{definition*}
+\begin{ejemplo*}
+    El número 31 es primo
+\end{ejemplo*}
+\begin{ejemplo*}
+    El número 39 no es primo
+\end{ejemplo*}
+
+\begin{exercise*}
+    Encuentra los primeros diez números primos
+\end{exercise*}
+\begin{ejemplo*}
+    El único número primo que es par es el $2$ (¿Por qué?)
+\end{ejemplo*}
+\subsection{Criterios de divisibilidad}
+En la siguiente lista introduciremos los criterios de divisibilidad, que sirven esencialmente para ver si un número divide a otro, muchos de ellos son intuitivos pero saberlos te puede facilitar un poco de cuentas.
+
+\begin{criterio*}
+    [Criterio de divisibilidad del 2]
+    Que su último dígito sea divisible entre 2
+\end{criterio*}
+\begin{ejemplo*}
+       $143\underline{4}$ es divisible entre 2 porque $4$ es divisible entre $2$
+   \end{ejemplo*}
+
+\begin{criterio*}
+    [Criterio de divisibilidad del 3]
+    Que la suma de sus dígitos sea divisible entre 3
+\end{criterio*}
+\begin{ejemplo*}
+        2025 es divisible entre $3$ porque $2+0+2+5=9$ es divisible entre $3$
+    \end{ejemplo*}
+    \begin{ejemplo*}
+        123456789 es divisible entre $3$ porque $1+2+3+4+5+6+7+8+9=45$ es divisible entre $3$
+    \end{ejemplo*}
+\begin{criterio*}
+    [Criterio de divisibilidad del 4]
+    Que el número formado por sus últimos dos dígitos sea divisible entre $4$
+\end{criterio*}
+\begin{ejemplo*}
+    $333\underline{12}$ es divisible entre 4 porque 12 es divisible entre 4
+\end{ejemplo*}
+\begin{ejemplo*}
+    $57\underline{04}$ es divisible entre 4 porque 4 es divisible entre 4
+\end{ejemplo*}
+\begin{criterio*}
+    [Criterio de divisibilidad del 5]
+    Que su último dígita sea $0$ ó $5$
+\end{criterio*}
+\begin{ejemplo*}
+    $123\underline{0}$ es divisible entre 5 porque termina en 0
+\end{ejemplo*}
+\begin{ejemplo*}
+    $343\underline{5}$ es divisible entre porque termina en 5
+\end{ejemplo*}
+\begin{criterio*}
+    [Criterio de divisibilidad del 6]
+    Que su último dígito sea par y la suma de sus dígitos sea divisible entre 3. Lo cúal es equivalente a que cumpla el criterio del 2 y del 3
+\end{criterio*}
+\begin{ejemplo*}
+    12648 es divisible entre 6 porque termina en 8 y $1+2+6+4+8=21$ es divisible entre 3
+\end{ejemplo*}
+
+\begin{criterio*}
+    [Criterio de divisibilidad del 8]
+    Que el número formado por sus últimos 3 dígitos sea divisible entre 8
+\end{criterio*}
+\begin{ejemplo*}
+    $45\underline{128}$ es divisible entre 8 porque 128 es divisible entre 8
+\end{ejemplo*}
+\begin{ejemplo*}
+    $123\underline{000}$ es divisible entre 8 porque 0 es divisible entre 8
+    \end{ejemplo*}
+    \begin{ejemplo*}
+    $2\overline{008}$ es divisible entre 8 porque 8 es divisible entre 8
+\end{ejemplo*}
+\begin{criterio*}
+    [Criterio de divisibilidad del 9]
+    Que la suma de sus dígitos sea divisible entre 9
+\end{criterio*}
+\begin{ejemplo*}
+    126 es divisible entre 9 porque $1+2+6=9$ es divisible entre 9
+\end{ejemplo*}
+\begin{ejemplo*}
+     123456789 es divisible entre 9 porque $1+2+3+4+5+6+7+8+9=45$ es divisible entre 9
+\end{ejemplo*}
+\begin{criterio*}
+    [Criterio de divisibilidad del 10]
+    Que su último dígito sea 0
+\end{criterio*}
+\begin{ejemplo*}
+    $1000000\underline{0}$ es divisible entre 10 porque termina en 0
+\end{ejemplo*}
+\begin{ejemplo*}
+\documentclass[11pt]{scrartcl}
+\usepackage[sexy]{evan}
+\usepackage{amsthm}
+\renewcommand{\proofname}{Proof}
+
+
+\usepackage{answers}
+\Newassociation{hint}{hintitem}{all-hints}
+\renewcommand{\solutionextension}{out}
+\renewenvironment{hintitem}[1]{\item[\bfseries #1.]}{}
+\raggedright
+
+\title{sharkydevil}
+
+
+\author{AlanLG}
+\date{9 de abril del 2024}
+\begin{document}
+\maketitle
+Consider the miquel point of quadrilateral $BCFE$, this is, the intersection of circles $(AEF)$ and $(ABC)$, we say this point is the $A$-sharkydevil point of $\triangle ABC$
+
+    \begin{figure}[ht]
+    \centering
+\begin{asy}
+import geometry;
+   size(7cm);
+   point B=(0,0); dot("B", B, SW);
+   point C=(8,0); dot("C", C, SE);
+   point A=(2,6.5); dot("A", A, N);
+   filldraw(circle(A,B,C),opacity(0.05)+purple, purple);
+ draw(A--B--C--cycle,purple);
+ draw(incircle(A,B,C),purple);
+  point I=incenter(A,B,C); dot ("I", I, S);
+  point D=foot(I,B,C); dot ("D", D, S);
+  point E=foot(I,A,C); dot ("E", E, S);
+  point F=foot(I,A,B); dot ("F", F, S);
+  draw(circle(A,E,F), lightred);
+pair[] rrr=intersectionpoints(circle(E,F,I), circle(B,A,C));
+  pair S = rrr[0]; dot("S", S, N);
+   pair [] zzz=intersectionpoints(line(A,I), circle(A,B,C));
+   pair M =zzz[0]; dot ("M", M, S);
+   draw(E--F--D--cycle, lightblue);
+   point P=foot(D, E, F); dot("P", P, N);
+   draw(D--P, blue);
+   draw(I--S, purple+dashed);
+   draw(S--M, opacity(0.5)+red);
+\end{asy}
+\caption{The $A$-Sharkydevil point.}
+  \label{fig:sharkydevil}
+  \end{figure}
+
+This point have many nice propierties, we are going to present the more known in the following table
+
+\begin{theorem}[Most known propierties in Skarkydevil]
+Using \Cref{fig:sharkydevil} notation
+    
+    \begin{enumerate}
+        \item[1)]\label{1)} $SD$ bisects $\angle BSC$ then it passes through the midpoint $M$ of arc $\arc{BC}$
+        \item[2)]\label{2)} $P$ be the foot from $D$ to $EF$ then $S$ is the inverse of $P$ wrt incircle
+        \item[3)]\label{3)} $AS$ and $BC$ meet on $AI$ perpendicular through $I$
+        \item[4)]\label{4)} $SD$ and $(AEF)$ meets on $A-$altitude
+    \end{enumerate}
+\end{theorem}
+
+\newpage
+\begin{figure}[ht]
+    \centering
+\begin{asy}
+import geometry;
+   size(12cm);
+   
+   point B=(0,0); dot("B", B, SW);
+   point C=(8,0); dot("C", C, SE);
+   point A=(2,6.5); dot("A", A, N);
+   filldraw(circle(A,B,C),opacity(0.05)+purple, purple);
+ draw(A--B--C--cycle,purple);
+ draw(incircle(A,B,C),purple);
+  point I=incenter(A,B,C); dot ("I", I, S);
+  point D=foot(I,B,C); dot ("D", D, S);
+  point E=foot(I,A,C); dot ("E", E, NE);
+  point F=foot(I,A,B); dot ("F", F, SW);
+  draw(circle(A,E,F), lightred);
+pair[] rrr=intersectionpoints(circle(E,F,I), circle(B,A,C));
+  pair S = rrr[0]; dot("S", S, NW);
+   pair [] zzz=intersectionpoints(line(A,I), circle(A,B,C));
+   pair M =zzz[0]; dot ("M", M, SE);
+   draw(E--F--D--cycle, lightblue);
+   point P=foot(D, E, F); dot("P", P, N);
+   draw(D--P, blue);
+   draw(I--S, purple+dashed);
+   draw(S--M, opacity(0.5)+red);
+  point V=intersectionpoint(line(A,S),line(B,C)); dot ("V", V, SW);
+   draw(V--A,purple+dashed);
+   draw(V--B,purple+dashed);
+   point R= intersectionpoint(line(A,M), line(B,C)); dot ("A*", R, SE);
+   draw(A--M, purple+dashed);
+   draw(arc(M, length(M-B), 0, 180),purple+dashed);
+   draw(circle(R,I,D), purple+dashed);
+\end{asy}
+\caption{$A$-Sharkydevil propierties}
+  \label{fig:sharky2}
+  \end{figure}
+
+     \begin{claim}
+         $SD$ bisects $\angle BSC$ then it passes through the midpoint $M$ of arc $\arc{BC}$
+     \end{claim}
+     \begin{proof}  
+     invert wrt $(BIC)$, $A$ goes to $A^{*}=BC\cap AM$, $(AEF)$ goes to $(A^{*}ID)$ then so $S$ goes to $D$.\end{proof}
+
+     \begin{claim}
+         $P$ be the foot from $D$ to $EF$ then $S$ is the inverse of $P$ wrt incircle
+     \end{claim}
+ \begin{proof} invert wrt incircle, $(AEF)$ goes to $EF$, as this inversion swaps $(ABC)$ to the nine-point circle of $\triangle DEF$, then $P$ is the inverse of $S$\end{proof}
+ \begin{claim}
+     $AS$ and $BC$ meet on $AI$ perpendicular through $I$
+ \end{claim}
+ \begin{proof}  use Radical Axis Theorem on $(AFE), (BIC)$ and $(ABC)$ \end{proof}
+  \begin{claim}
+      $SD$ and $(AEF)$ meets on $A-$altitude
+  \end{claim}
+\begin{proof} Invert wrt $(BIC)$, let $R=(AEF)\cap SD$, $R^{*}=(IDA^{*})\cap SD$ so\[\angle MID=\angle MR^{*}A^{*}=\angle MAR\]consider $O$ the center of $(ABC)$, then $O$ goes to $O^{*}=MO\cap (BIC)$ then $BOCM$ is a rhombus and note that
+ \[\angle MAO =\angle MO^{*}A^{*}=\angle O^{*}MA^{*}=\angle MID=\angle MAR \]
+ergo $AU$ and $AO$ are isogonal\end{proof}
+ 
+\newpage
+ \begin{example}
+     [Mexico TST 2024]
+
+     Let $\Omega $ be the circumcircle of $\triangle ABC$ with incenter $I$. Let $M\neq A$ be the intersection of $AI$ and $\Omega $, and $D\in BC$ such that $ID\perp BC$. Let $E\in \Omega $ such that $AE\perp BC$. Let $N\neq I$ the intersection of $ID$ and $(BIC)$. Prove that $NE$ and $MD$ intersect at $\Omega$
+ \end{example}
+ \begin{figure}[ht]
+    \centering
+\begin{asy}
+import geometry;
+   size(10cm);
+   point B=(0,0); dot("B", B, SW);
+   point C=(8,0); dot("C", C, SE);
+   point A=(2,6.5); dot("A", A, N);
+   filldraw(circle(A,B,C),opacity(0.05)+red, red);
+   point I=incenter(A,B,C); dot("I", I, S);
+   draw(A--B--C--cycle,red);
+   pair [] zzz=intersectionpoints(line(A,I), circle(A,B,C));
+   pair M =zzz[0]; dot ("M", M, S);
+   point D=foot(I,B,C); dot ("D", D, SE);
+   point J=foot(A,B,C); 
+   pair [] qqq=intersectionpoints(line(A,J), circle(A,B,C));
+    pair E=qqq[0]; dot("E", E, SW);
+   draw(circle(B,I,C), red);
+   pair [] rrr=intersectionpoints(line(D,I), circle(I,B,C));
+   pair N =rrr[0]; dot ("N", N, S);
+   draw(I--N, red);
+  pair S = intersectionpoint(line(M,D), line(E,N)); dot("S", S,NW);
+   draw(M--S,red);
+   draw(N--S, dashed+red);
+   draw(A--M, red);
+   markangleradiusfactor *= 0.5;
+   markangle(A,M,S,blue);
+   markangle(I,N,S,blue);
+   markangle(A,E,S,blue);
+   draw(A--E,red);
+\end{asy}
+\caption{Mexico TST/2024}
+  \label{fig:mexicotst}
+  \end{figure}
+  We instantly note that $S=MD\cap (ABC)$ is the $A-$sharkydevil point, now note that 
+  \[\angle AMS=\angle AES=\angle INS\]
+  as $IS\parallel AE$ we are done; the last inequality follows by $IMNS$ being cyclic which is true because the inversion wrt $(BIC)$ send $\overline{IDN}$ to $IMNS$      
+
+
+\end{document}

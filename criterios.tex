@@ -1,0 +1,234 @@
+\documentclass[11pt]{scrartcl}
+\usepackage[sexy]{evan}
+\usepackage{amsthm}
+\renewcommand{\proofname}{Prueba}
+\usepackage{cancel}
+\usepackage{xcolor}
+\usepackage{answers}
+\Newassociation{hint}{hintitem}{all-hints}
+\renewcommand{\solutionextension}{out}
+\renewenvironment{hintitem}[1]{\item[\bfseries #1.]}{}
+\newcommand{\colorcancel}[2][black]{\renewcommand\CancelColor{\color{#1}}\cancel{#2}}
+\title{Criterios de divisibilidad}
+
+
+\author{AlanLG}
+\date{Marzo 2024}
+
+\begin{document}
+
+\maketitle
+
+\section{Lectura}
+En esta lista trabajaremos propiedades elementales de teoría de números, la rama de las matemáticas que estudia el conjunto de los números enteros denotado por $\mathbb{Z}$:
+\[\mathbb{Z}=\{\ldots,-2,-1,0,1,2,3,\ldots\}\]
+
+Así como el conjunto de los naturales denotado por $\mathbb{N}$
+
+\[\mathbb{N}=\{1,2,3,\ldots\}\]
+
+
+\subsection{Divisibilidad}
+Si $a$ y $b$ son dos número enteros ($a,b\in\mathbb{Z}$),decimos que $a$ divide a $b$ (ó bien $a\mid b$) si y solo si la división $\frac{a}{b}$ es entero, o bien
+\[a\mid b \iff \frac{b}{a}\in \mathbb{Z}\]
+
+También podemos decir que $a$ divide a $b$ si existe un entero $k$ tal que $b=a\cdot k$, o bien
+\[a\mid b \iff \exists\hspace{0.1cm} k\in\mathbb{Z} : b=a\cdot k\]
+
+Cuando $a$ \textbf{no divide} a $b$ lo denotamos por $a\nmid b$
+
+\begin{ejemplo*}
+    $7\mid 21$ pues $\frac{21}{7}=3\in \mathbb{Z}$
+\end{ejemplo*}
+\begin{ejemplo*}
+    $20\mid 100$ pues $100=20\cdot(50)$
+\end{ejemplo*}
+\begin{ejemplo*}
+    El 1 divide a todos los números (¿Por qué?)
+\end{ejemplo*}
+\subsection{Números primos}
+
+\begin{proposition*}
+[Definición de número primo]
+    Decimos que un número entero positivo $p\neq \pm 1$ es primo si sus únicos divisores son $\pm1$ y $\pm p$
+\end{proposition*}
+\begin{definition*}
+    Decimos que un número entero positivo diferente de $\pm 1$ es \textbf{Compuesto} si no es primo, a los número 1 y -1 se le llaman \textit{unidades}
+\end{definition*}
+\begin{ejemplo*}
+    El número 31 es primo
+\end{ejemplo*}
+\begin{ejemplo*}
+    El número 39 no es primo
+\end{ejemplo*}
+
+\begin{exercise*}
+    Encuentra los primeros diez números primos
+\end{exercise*}
+\begin{ejemplo*}
+    El único número primo que es par es el $2$ (¿Por qué?)
+\end{ejemplo*}
+\subsection{Criterios de divisibilidad}
+En la siguiente lista introduciremos los criterios de divisibilidad, que sirven esencialmente para ver si un número divide a otro, muchos de ellos son intuitivos pero saberlos te puede facilitar un poco de cuentas.
+
+\begin{criterio*}
+    [Criterio de divisibilidad del 2]
+    Que su último dígito sea divisible entre 2
+\end{criterio*}
+\begin{ejemplo*}
+       $143\underline{4}$ es divisible entre 2 porque $4$ es divisible entre $2$
+   \end{ejemplo*}
+
+\begin{criterio*}
+    [Criterio de divisibilidad del 3]
+    Que la suma de sus dígitos sea divisible entre 3
+\end{criterio*}
+\begin{ejemplo*}
+        2025 es divisible entre $3$ porque $2+0+2+5=9$ es divisible entre $3$
+    \end{ejemplo*}
+    \begin{ejemplo*}
+        123456789 es divisible entre $3$ porque $1+2+3+4+5+6+7+8+9=45$ es divisible entre $3$
+    \end{ejemplo*}
+\begin{criterio*}
+    [Criterio de divisibilidad del 4]
+    Que el número formado por sus últimos dos dígitos sea divisible entre $4$
+\end{criterio*}
+\begin{ejemplo*}
+    $333\underline{12}$ es divisible entre 4 porque 12 es divisible entre 4
+\end{ejemplo*}
+\begin{ejemplo*}
+    $57\underline{04}$ es divisible entre 4 porque 4 es divisible entre 4
+\end{ejemplo*}
+\begin{criterio*}
+    [Criterio de divisibilidad del 5]
+    Que su último dígita sea $0$ ó $5$
+\end{criterio*}
+\begin{ejemplo*}
+    $123\underline{0}$ es divisible entre 5 porque termina en 0
+\end{ejemplo*}
+\begin{ejemplo*}
+    $343\underline{5}$ es divisible entre porque termina en 5
+\end{ejemplo*}
+\begin{criterio*}
+    [Criterio de divisibilidad del 6]
+    Que su último dígito sea par y la suma de sus dígitos sea divisible entre 3. Lo cúal es equivalente a que cumpla el criterio del 2 y del 3
+\end{criterio*}
+\begin{ejemplo*}
+    12648 es divisible entre 6 porque termina en 8 y $1+2+6+4+8=21$ es divisible entre 3
+\end{ejemplo*}
+
+\begin{criterio*}
+    [Criterio de divisibilidad del 8]
+    Que el número formado por sus últimos 3 dígitos sea divisible entre 8
+\end{criterio*}
+\begin{ejemplo*}
+    $45\underline{128}$ es divisible entre 8 porque 128 es divisible entre 8
+\end{ejemplo*}
+\begin{ejemplo*}
+    $123\underline{000}$ es divisible entre 8 porque 0 es divisible entre 8
+    \end{ejemplo*}
+    \begin{ejemplo*}
+    $2\overline{008}$ es divisible entre 8 porque 8 es divisible entre 8
+\end{ejemplo*}
+\begin{criterio*}
+    [Criterio de divisibilidad del 9]
+    Que la suma de sus dígitos sea divisible entre 9
+\end{criterio*}
+\begin{ejemplo*}
+    126 es divisible entre 9 porque $1+2+6=9$ es divisible entre 9
+\end{ejemplo*}
+\begin{ejemplo*}
+     123456789 es divisible entre 9 porque $1+2+3+4+5+6+7+8+9=45$ es divisible entre 9
+\end{ejemplo*}
+\begin{criterio*}
+    [Criterio de divisibilidad del 10]
+    Que su último dígito sea 0
+\end{criterio*}
+\begin{ejemplo*}
+    $1000000\underline{0}$ es divisible entre 10 porque termina en 0
+\end{ejemplo*}
+\begin{ejemplo*}
+    $3435\underline{0}$ es divisible entre 10 porque termina en 0
+\end{ejemplo*}
+\begin{criterio*}
+    [Criterio de divisibilidad del 11]
+    Que la suma de los dígitos en las posiciones pares menos la suma de los
+dígitos en las posiciones impares sea múltiplo de 11.
+
+\end{criterio*}
+\begin{ejemplo*}
+    8192734 es divisible entre 11 porque $(8+9+7+4)-(1+2+3)=22$ es divisible entre 11
+\end{ejemplo*}
+\begin{ejemplo*}
+    132 es divisible entre $11$ porque $(3)-(1+2)=0$ es divisble entre 11
+\end{ejemplo*}
+\begin{ejemplo*}
+    25366 es divisible entre 11 porque $(5+6)-(2+3+6)=0$ es divisible entre 11
+\end{ejemplo*}
+\section{Ejercicios}
+\begin{exercise}
+Si un número es divisible por 2 y 6, ¿podemos garantizar que es divisible por $2\times 6=12$
+\end{exercise}
+\begin{exercise}
+    Si un número es divisible por 3 y por 4, ¿podemos garantizar que es divisible por $3\times 4=12$?
+\end{exercise}
+\begin{exercise}
+Si un número es divisible por 4 y 6, ¿podemos garantizar que es divisible por $4\times 6=12$
+\end{exercise}
+\begin{exercise}
+    La suma de dos números pares también es un número par
+\end{exercise}
+\begin{example}
+    
+\end{example}
+\begin{example}
+    Si sabemos que solo uno de los números 234, 2345, 23456, 234567, 2345678, 23456789 es primo. ¿Cuál de ellos es?
+
+\end{example}
+\textit{Solución.}Podemos ir descartando los números que no pueden ser primos, buscando algunos de sus divisores, primero descartemos los múltiplos de 2
+
+\[\Large{\colorcancel[blue]{234}},\hspace{0.35cm} 2345, \hspace{0.35cm}\colorcancel[blue]{23456}, \hspace{0.35cm}234567, \hspace{0.35cm}\colorcancel[blue]{2345678}, \hspace{0.35cm}23456789 \]
+Luego los múltiplos de $5$
+
+\[\colorcancel[blue]{234}, \hspace{0.35cm}{\Large{\colorcancel[red]{2345}}}, \hspace{0.35cm}\colorcancel[blue]{23456},\hspace{0.35cm} 234567,\hspace{0.35cm} \colorcancel[blue]{2345678},\hspace{0.35cm} 23456789 \]
+Nota que $3\mid 234567$ pues $3\mid 2+3+4+5+6+7=27$, entonces tambien lo podemos descartar
+
+\[\colorcancel[blue]{234},\hspace{0.35cm} \colorcancel[red]{2345},\hspace{0.35cm} \colorcancel[blue]{23456},\hspace{0.35cm} {\Large{\colorcancel[green]{234567}}},\hspace{0.35cm} \colorcancel[blue]{2345678},\hspace{0.35cm} \boxed{23456789} \]
+
+De modo que el primo buscado es 23456789
+
+\begin{example}
+    Encuentra el menor entero positivo $a$ que cumple que $a + 2a + 3a + 4a + 5a + 6a + 7a + 8a + 9a$ es un número con
+todas sus cifras iguales
+\end{example}
+\textit{Solución.} Sea $N$ el número deseado; notemos que 
+\[N=a + 2a + 3a + 4a + 5a + 6a + 7a + 8a + 9a=45a\]
+Ahora nota que $5\mid N$ y $9\mid N$ (¿Por qué?)
+Como 5 divide a $N$, sabemos que $N$ debe terminar en 0 o en 5, de modo que como, todas las cifras son iguales todos sus dígitos son 0 o 5, pero no pueden ser todos 0 (¿Por qué?). De modo que 
+
+\[N=\underbrace{55\cdots 5}_{\text{$x$ cifras 5´s}}\]
+
+Pero como $9\mid N$ entonces la suma de dígitos de $N$ es divisible entre $5$, pero la suma de dígitos de $N$ es $5x$ de modo que queremos hallar el menor $x\in\mathbb{Z}_{>0}$ tal que $9\mid 5x$, como $5$ no tiene factores en común con $5$ entonces $9\mid x$ de modo que el menor $x$ que cumple es $9$ y entonces
+
+\[N=\underbrace{555555555}_{9}=45a \Rightarrow a=\frac{555555555}{45}=123456789\]
+
+\bigskip
+\section{Problemas}
+\Opensolutionfile{all-hints}
+\begin{problem}
+h
+    \begin{hint}
+        vs
+    \end{hint}
+\end{problem}
+
+
+\section{Hints}
+
+\Closesolutionfile{all-hints}
+\begin{enumerate}
+  \input{all-hints.out}
+\end{enumerate}
+
+
+\end{document}
