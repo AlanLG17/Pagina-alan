@@ -1,42 +1,233 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mathvy - Material de Estudio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    body { font-family: 'Inter', sans-serif; margin: 0; background-color: #f0f0f5; color: #333; }
-    header { background-color: #667eea; color: white; padding: 20px; text-align: center; font-size: 2rem; }
-    nav { display: flex; justify-content: center; gap: 15px; background-color: #fff; padding: 10px; border-bottom: 2px solid #667eea; }
-    nav a { text-decoration: none; color: #667eea; font-weight: 600; padding: 8px 16px; border-radius: 5px; transition: background-color 0.3s; }
-    nav a:hover { background-color: #e0e0f0; }
-    .container { display: flex; flex-wrap: wrap; gap: 20px; padding: 20px; }
-    .category { flex: 1 1 calc(50% - 20px); background-color: white; border-radius: 8px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); text-align: center; }
-    .category h2 { font-size: 1.5rem; margin-bottom: 10px; }
-    .category img { max-width: 100%; height: auto; border-radius: 5px; margin-bottom: 10px; }
-    .category a { display: inline-block; margin-top: 10px; padding: 10px 20px; background-color: #667eea; color: #fff; border-radius: 5px; text-decoration: none; transition: background-color 0.3s; }
-    .category a:hover { background-color: #5567d3; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Material de Estudio</title>
+    <style>
+        body {
+            font-family: 'Garamond', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f3f3;
+            color: #333;
+        }
+    
+        header {
+            background-color: #333333dc;
+            color: #000000;
+            padding: 20px 0;
+            text-align: center;
+            margin-bottom: 20px;
+            font-family: 'Garamond', serif;
+        }
+        
+        
+        .container {
+            width: 90%;
+            margin: auto;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .category {
+            background-color: #f5ffff;
+            border: 2px solid #000000;
+            border-radius: 10px;
+            margin: 10px;
+            width: calc(50% - 20px);
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+            transition: all 0.3s ease;
+            font-family: 'Garamond', serif;
+            height: auto;
+        }
+        
+        .category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .category h2 {
+            margin: 0;
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #333;
+            font-weight: bold;
+            font-family: 'Garamond', serif;
+        }
+        
+        .category p {
+            margin: 0;
+            font-size: 16px;
+            color: #666;
+            font-family: 'Garamond', serif;
+        }
+        
+        .category img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        
+        .category a {
+            display: inline-block;
+            margin-top: 15px;
+            text-decoration: none;
+            background-color: #8c8c8c;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 30px;
+            transition: background-color 0.3s, transform 0.2s;
+            box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+            font-size: 16px;
+            font-weight: bold;
+            font-family: 'Garamond', serif;
+        }
+        
+        .category a:hover {
+            background-color: #666;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 10px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+        }
+        
+        @media (max-width: 768px) {
+            .category {
+                width: calc(100% - 20px);
+            }
+        }
+        
+
+
+        body {
+            background-image: url('ruta_de_la_imagen.jpg'); /* Ruta de la imagen de fondo */
+            background-size: cover; /* Ajustar la imagen al tamaño del contenedor */
+            background-repeat: no-repeat; /* No repetir la imagen */
+        }
+
+        /*menu despegable */
+
+        body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+    
+    header {
+        background-color: #333;
+        padding: 10px 0;
+    }
+    
+    nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+    
+    nav ul li {
+        display: inline-block;
+    }
+    
+    nav ul li a {
+        display: block;
+        padding: 10px 20px;
+        color: white;
+        text-decoration: none;
+    }
+    
+    nav ul li a:hover {
+        background-color: #555;
+    }
+    
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #333;
+        width: 200px;
+        z-index: 1;
+    }
+    
+    .dropdown-content li {
+        display: block;
+    }
+    
+    .dropdown-content li a {
+        padding: 10px 20px;
+        color: white;
+        text-decoration: none;
+    }
+    
+    .dropdown-content li a:hover {
+        background-color: #555;
+    }
+
+    
+    </style>
 </head>
 <body>
-  <header>Material de Estudio - Mathvy</header>
-  <nav>
-    <a href="inicio.html">Inicio</a>
-    <a href="elemental.html">Elemental</a>
-    <a href="intermedio.html">Intermedio</a>
-    <a href="avanzado.html">Avanzado</a>
-    <a href="superavanzado.html">Super Avanzado</a>
-    <a href="material.html">Listas Cortas</a>
-  </nav>
-  <div class="container">
-    <div class="category"><h2>Elemental</h2><img src="ruta_a_imagen_elemental.jpg" alt="Elemental"><a href="elemental.html">Ir a Elemental</a></div>
-    <div class="category"><h2>Intermedio</h2><img src="ruta_a_imagen_intermedio.jpg" alt="Intermedio"><a href="intermedio.html">Ir a Intermedio</a></div>
-    <div class="category"><h2>Avanzado</h2><img src="ruta_a_imagen_avanzado.jpg" alt="Avanzado"><a href="avanzado.html">Ir a Avanzado</a></div>
-    <div class="category"><h2>Super Avanzado</h2><img src="ruta_a_imagen_superavanzado.jpg" alt="Super Avanzado"><a href="superavanzado.html">Ir a Super Avanzado</a></div>
-    <div class="category"><h2>Listas Cortas</h2><img src="ruta_a_imagen_listas.jpg" alt="Listas Cortas"><a href="material.html">Ir a Listas</a></div>
-  </div>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="inicio.html" class="active">Inicio</a></li>
+                <li><a  id="material">Material</a>
+                    <ul class="dropdown-content" id="material-dropdown">
+                        <li><a href="elemental.html">Elemental</a></li>
+                        <li><a href="intermedio.html">Intermedio</a></li>
+                        <li><a href="avanzado.html">Avanzado</a></li>
+                         <li><a href="superavanzado.html">Superavanzado</a></li>
+                        <li><a href="material.html">Material</a></li>
+                       
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <script src="script.js"></script>
+
+    <div class="container">
+        <div class="category">
+            <h2>Elemental</h2>
+            <img style="width: 83%;" src="ruta_a_la_imagen_elemental.jpg" alt="Material Elemental">
+            <p></p>
+            <a href="elemental.html">Ir a Elemental</a>
+        </div>
+
+        <div class="category">
+            <h2>Intermedio</h2>
+            <img style="width: 150;" src="ruta_a_la_imagen_intermedio.jpg" alt="Material Intermedio">
+            <p></p>
+            <a href="intermedio.html">Ir a Intermedio</a>
+        </div>
+
+        <div class="category">
+            <h2>Avanzado</h2>
+            <img style="width: 78%;" class="imagen-especifica" src="ruta_a_la_imagen_avanzado.jpg" alt="Material Avanzado">
+            <p></p>
+            <a href="avanzado.html">Ir a Avanzado</a>
+        </div>
+
+        <div class="category">
+            <h2>Super Avanzado</h2>
+            <img  style="width: 78%;" class="imagen-especifica" src="ruta_a_la_imagen_superavan.jpg" alt="Material Super Avanzado">
+            <p></p>
+            <a href="superavanzado.html">Ir a SuperAvanzado</a>
+        </div>
+    </div>
+
+
+
+        <div class="category">
+            <h2>Listas cortas</h2>
+            <img  style="width: 78%;" class="imagen-especifica" src="ruta_a_la_imagen_general.jpg" alt="Material General">
+            <p></p>
+            <a href="material.html">Ir a Listas</a>
+        </div>
+    </div>
+
 </body>
 </html>
-
-
